@@ -1,0 +1,15 @@
+<h1>Edit User</h1>
+
+<a href="/index">Users</a>
+<%= @user.errors.full_messages.join %>
+<form action="/users/<%= @user.id%>" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="hidden" name="_method" value="put">
+  <label for="">Email</label>
+  <input type="text" name="email" value="<%=@user.email%>">
+
+  <label for="">Password</label>
+  <input type="text" name="password" value="<%=@user.password%>">
+
+  <button>Update</button>
+</form>
