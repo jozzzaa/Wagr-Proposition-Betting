@@ -23,14 +23,14 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to '/users'
     else
-      render :new # now in users controller, just render home template, not need to go to '/pages/home'
+      render :new
     end
   end
 
   # not sure if we will have a show page for a user to see their account details - if so, keep the method below.
   def show
     @user = User.find(params[:id])
-    render :show #don't need to put this line because it infers it from method name
+    render :show
   end
 
   def edit
