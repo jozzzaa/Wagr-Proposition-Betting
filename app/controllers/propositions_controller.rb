@@ -1,6 +1,7 @@
 class PropositionsController < ApplicationController
 
   def index
+    # if user.admin?
     @user = session[:user_id] # this is for listing the user's stats on the right.
     @props = Proposition.last(12)
     # @prop_popular = # need to go into bets and count proposition_id and sort by that - this site tells exactly how to do it (I didn't have time to figure this out) - http://stackoverflow.com/questions/8696005/rails-3-activerecord-order-by-count-on-association

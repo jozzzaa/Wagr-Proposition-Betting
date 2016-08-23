@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :bets
   resources :propositions
   resources :users
+  resources :charges
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # getting the login form
