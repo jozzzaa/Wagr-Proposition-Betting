@@ -1,10 +1,16 @@
 class BetsController < ApplicationController
 
   def create
-    @prop = params[:proposition_id]
+    @prop = Proposition.find(params[:proposition_id])
     @bet = Bet.new
     # assuming don't need to put user_id or proposition_id in here?
-    @bet.bet_side = params[:bet_side]
+    @bet.proposition_id = params[:proposition_id]
+    @bet.user_id = session[:user_id]
+    if params[:bet_side] == "yes"
+      @bet.bet_side = true
+    elsif params[:bet_side] == "no"
+      @bet.bet_side = false
+    end
     @bet.amount = 10
     # I'm presuming we don't need to save the user_id here? Does it automatically do it for us?
     @bet.save
@@ -14,7 +20,8 @@ class BetsController < ApplicationController
 
   def destroy
     @bet = Bet.find(params[:id])
-    if @bet.deadline >= Time.now
+    @prop = Proposition.find(params[:proposition_id])
+    if @prop.deadline >= Time.now
       @bet.destroy
       redirect_to "/propositions/#{@prop.id}"
     else
