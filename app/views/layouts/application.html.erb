@@ -6,13 +6,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://use.typekit.net/jkh5evg.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </head>
 
   <body>
+
     <%= session[:user_id]%>
     <%= form_tag '/session', method:'delete' do %>
       <button>Logout</button>
     <% end %>
+
     <%= yield %>
+
   </body>
 </html>
