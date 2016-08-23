@@ -28,7 +28,7 @@
 <p><%= flash[:notice] %></p>
 
 <% @prop.bets.each do |bet| %>
-  <p><%= bet.user_id %></p>
+  <%= user = User.find_by(id:bet.user_id).user_name %>
   <p><%= bet.bet_side %></p>
   <form action="/bets/<%= bet.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
