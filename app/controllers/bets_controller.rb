@@ -12,10 +12,9 @@ class BetsController < ApplicationController
       @bet.bet_side = false
     end
     @bet.amount = 10
-    # I'm presuming we don't need to save the user_id here? Does it automatically do it for us?
     @bet.save
     redirect_to "/propositions/#{@prop.id}"
-    # make sure display the error message (@bet.error) on the proposition page if it doesn't save.
+    # make sure display the error message (@bet.errors) on the proposition page if it doesn't save.
   end
 
   def destroy
