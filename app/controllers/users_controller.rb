@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user.user_name = params[:user_name]
     @user.profile_image = params[:profile_image]
     @user.account_balance = 0
-    @user.account_type = "Standard"
+    @user.account_type = "standard"
     if @user.save
       redirect_to '/users'
     else
