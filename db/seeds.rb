@@ -10,7 +10,9 @@
 	Proposition.destroy_all
 	User.destroy_all
 	
-
+	##types of accounts 
+	##admin , ref and standard. 
+## need to create a ref- the person who can judge a question 
 
   u1 = User.create(first_name: "Jordan", last_name: "Etzler", user_name: "jozzza", email: "jordan@aruza.co", 
   password: "pudding", account_balance: 456.43, account_type: "admin" )
@@ -22,13 +24,13 @@
   password: "pudding", account_balance: 705.45, account_type: "admin" )
 
 	u4 = User.create(first_name: "David", last_name: "Hasslehoff", user_name: "theHoff", email: "david@mail.com", 
-  password: "pudding", account_balance: 90.00, account_type: "general" )
+  password: "pudding", account_balance: 90.00, account_type: "standard" )
 
 	u5 = User.create(first_name: "Kevin", last_name: "Spacey", user_name: "spaceman3", email: "kevin@mail.com", 
-  password: "pudding", account_balance: 66.65, account_type: "general" )
+  password: "pudding", account_balance: 66.65, account_type: "standard" )
 
 	u6 = User.create(first_name: "queen", last_name: "elizabeth", user_name: "reptileOverLord", email: "queeny666@mail.com", 
-  password: "pudding", account_balance: 230.50, account_type: "general" )
+  password: "pudding", account_balance: 230.50, account_type: "standard" )
 
 	
 	p1 = Proposition.create(user_id: u1.id, title: "Will Et Go Home", description: "I want to know whats going to happen", image: "http://thepeoplesmovies.com/wp-content/uploads/2012/05/etbikescene-300x160.jpg", deadline: '25/08/2016/20/30/00' )
