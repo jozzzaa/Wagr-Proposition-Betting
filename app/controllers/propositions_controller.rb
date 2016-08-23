@@ -2,13 +2,13 @@ class PropositionsController < ApplicationController
 
   def index
     @user = session[:user_id] # this is for listing the user's stats on the right.
-    @prop_latest = Proposition.last(12)
+    @props = Proposition.last(12)
     # @prop_popular = # need to go into bets and count proposition_id and sort by that - this site tells exactly how to do it (I didn't have time to figure this out) - http://stackoverflow.com/questions/8696005/rails-3-activerecord-order-by-count-on-association
     render :index
   end
 
   def new
-    # to access the error messages if it doesn't save from create and renders this page again, use @prop.error
+    # to access the error messages if it doesn't save from create and renders this page again, use @prop.errors
     render :new
   end
 
@@ -18,6 +18,7 @@ class PropositionsController < ApplicationController
     @prop.description = params[:description]
     @prop.image = params[:image]
     @prop.deadline = params[:deadline]
+    @prop.user_id = params[:user_id]
     # I'm presuming we don't need to save the user_id here? Does it automatically do it for us?
     if @prop.save
       redirect_to "/propositions/#{@prop.id}"
@@ -34,9 +35,9 @@ class PropositionsController < ApplicationController
   end
 
   def edit
-    # to access the error messages, it will be @prop.error
-    if @prop.bets.first.deadline >= Time.now || @prop.bets.second
-      @prop = Proposition.find(params[:id])
+    # to access the error messages, it will be @prop.errors
+    @prop = Proposition.find(params[:id])
+    if @prop.bets.count < 2
       render :edit
     else
       flash[:title]='Error!'
@@ -68,11 +69,11 @@ class PropositionsController < ApplicationController
   end
 
   def destroy
-    if @prop.bets.first.deadline >= Time.now || @prop.bets.second
-      @prop = Proposition.find(params[:id])
+    @prop = Proposition.find(params[:id])
+    if @prop.bets.count < 2
       @prop.bets.destroy
       @prop.destroy
-      redirect_to '/index'
+      redirect_to '/propositions'
     else
       flash[:title]='Error!'
       flash[:notice]='You can no longer delete your proposition.'
@@ -84,7 +85,7 @@ class PropositionsController < ApplicationController
     @prop = Proposition.find(params[:id])
     @prop.bets.destroy
     @prop.destroy
-    redirect_to '/index'
+    redirect_to '/propositions'
   end
 
 end

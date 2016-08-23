@@ -1,1 +1,15 @@
 <h1>Propositions</h1>
+
+<% @props.each do |prop| %>
+
+<p><%= prop.title %></p>
+<form action="/propositions/<%= prop.id %>" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete</button>
+</form>
+<form action="/propositions/<%= prop.id %>/edit" method="get">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <button>Edit</button>
+
+<%end%>
