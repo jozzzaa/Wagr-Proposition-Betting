@@ -1,0 +1,14 @@
+<h1>Create a Proposition</h1>
+
+<form action="/propositions" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <label for="">Title</label>
+  <input name="title" type="text">
+  <label for="">Description</label>
+  <input name="description"type="text">
+  <label for="">Deadline</label>
+  <input name="deadline"type="text">
+  <label for="">User ID</label>
+  <input name="user_id"type="text">
+  <button>Create</button>
+</form>

@@ -1,0 +1,15 @@
+<h1>Edit Proposition</h1>
+
+<form action="/propositions/<%= @prop.id%>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <label for="">Title</label>
+  <input name="title" type="text" value="<%=@prop.title%>">
+  <label for="">Description</label>
+  <input name="description"type="text" value="<%=@prop.description%>">
+  <label for="">Deadline</label>
+  <input name="deadline"type="text" value="<%=@prop.deadline%>">
+  <label for="">User ID</label>
+  <input name="user_id"type="text" value="<%=@prop.user_id%>">
+  <button>Edit</button>
+</form>
