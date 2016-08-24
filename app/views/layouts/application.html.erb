@@ -45,6 +45,10 @@
             <% end %>
           <% end %>
 
+          <% if logged_in? %>
+            <button>Hi, <%= current_user.first_name %></button>
+          <% end %>
+
         </div>
       </nav>
 
