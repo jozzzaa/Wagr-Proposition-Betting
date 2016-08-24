@@ -8,7 +8,7 @@ class SessionController < ApplicationController
     if @user && @user.authenticate(params[:password])
       # think of session as a global hash
       session[:user_id] = @user.id
-      redirect_to '/'
+      redirect_to '/dashboard'
     else
       # boo
       render :new # stay at the login form
