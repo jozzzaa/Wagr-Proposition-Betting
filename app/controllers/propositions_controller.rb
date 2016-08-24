@@ -80,15 +80,14 @@ class PropositionsController < ApplicationController
     redirect_to '/propositions'
   end
 
-  #################################################### NEW CODE
-
   def decide_referee
     if Proposition.select { |prop| prop.outcome == "nil" && prop.deadline < Time.now }
       @prop = Proposition.select { |prop| prop.outcome == "nil" && prop.deadline < Time.now }.first
       # need to sort it by deadline by datetime? but we can figure this out later.
       redirect_to "/propositions/#{@prop.id}"
     else
-      redirect_to "???????????????"
+      # redirect_to "???????????????"
+    end
   end
 
   def outcome_decided
@@ -134,7 +133,5 @@ class PropositionsController < ApplicationController
     end
     redirect_to '/referee'
   end
-
-  ################################################# NEW CODE
 
 end
