@@ -1,3 +1,67 @@
+
+<div class="show-holder">
+
+  <div class="content">
+    <div class="card-left"><img src="/images/card-sides.png" alt=""></div>
+    <div class="card">
+      <div class="card-image" style="background-image: url(<%= @prop.image %>)"></div>
+      <div class="card-blurb">
+        <h5><%= @prop.title %></h5>
+        <div class="button-holder">
+          <%= image_tag('icons/tick-icon.png', alt: 'Tick Icon') %>
+          <h5>$<span>10</span></h5>
+          <%= image_tag('icons/cross-icon.png', alt: 'Tick Icon') %>
+        </div>
+      </div>
+    </div>
+    <div class="card-right"><img src="/images/card-sides-flip.png" alt=""></div>
+    <div class="extra-info">
+      <div class="description">
+        <h5>Description</h5>
+        <p><%= @prop.description %></p>
+      </div>
+      <div class="bets">
+        <h5>Wagers</h5>
+        <% @prop.bets.each do |bet| %>
+          <p>
+            <%= user = User.find_by(id:bet.user_id).user_name %> voted <%= bet.bet_side %>
+            <!-- <% if admin? %>
+              <form action="/bets/<%= bet.id %>" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                <input type="hidden" name="id" value="<%=bet.id%>">
+                <input type="hidden" name="proposition_id" value="<%=@prop.id%>">
+                <button>Delete Bet</button>
+              </form>
+            <% end %> -->
+          </p>
+          <hr>
+        <%end%>
+      </div>
+    </div>
+  </div>
+
+  <div class="side-panel">
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+
+
+
+
 <h1><%= @prop.title %></h1>
 
 <form action="/propositions/<%= @prop.id %>" method="post">
