@@ -137,3 +137,156 @@
 .right-content > p {
   margin-top: 0px;
 }
+
+
+// SHOW PAGES
+
+.show-holder {
+  padding: 20px;
+}
+
+.content {
+  display: inline-block;
+  width: 74%;
+  text-align: center;
+}
+
+.card {
+  display: inline-block;
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  margin: 0;
+  border-radius: 15px;
+  border-left: 3px solid #414657;
+  border-right: 3px solid #414657;
+  // opacity: 0.95;
+}
+
+.card-left, .card-right {
+  display: inline-block;
+  width: 100px;
+  margin: 0;
+  vertical-align: top;
+}
+
+.card-left {
+  text-align: right;
+}
+
+.card-right {
+  text-align: left;
+}
+
+.card-left > img {
+  height: 450px;
+  padding-top: 25px;
+  opacity: 0.8;
+  margin-right: -5px;
+
+}
+
+.card-right > img {
+  height: 450px;
+  padding-top: 25px;
+  opacity: 0.8;
+  margin-left: -5px;
+}
+
+.card-image {
+  width: 95%;
+  height: 65%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  margin: 2.5% auto;
+  border-radius: 7px;
+
+}
+
+.card-blurb {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  color: black;
+}
+
+.card-blurb > h5 {
+  color: black;
+  font-size: 1.3em;
+  line-height: 1.4em;
+}
+
+.button-holder {
+  padding-top: 10px;
+}
+
+.button-holder > img {
+  height: 60px;
+  transition: 0.5s;
+}
+
+.button-holder > img:hover {
+  opacity: 0.6;
+}
+
+.button-holder > h5 {
+  color: black;
+  display: inline-block;
+  width: 60%;
+  line-height: 60px;
+  vertical-align: top;
+  font-size: 1.5em;
+  color: #FD4338;
+  // margin-bottom: 50px;
+}
+
+.button-holder > h5 > span {
+  font-size: 2.4em;
+
+}
+
+.extra-info {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.extra-info h5 {
+  padding-bottom: 5px;
+}
+
+.description {
+  display: inline-block;
+  width: 49%;
+  vertical-align: top;
+  text-align: justify;
+  padding: 15px;
+}
+
+.bets {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+  text-align: left;
+  padding: 15px;
+
+}
+
+hr {
+  opacity: 0.1;
+}
+
+
+
+
+
+
+
+
+.side-panel {
+  background-color: mistyrose;
+  display: inline-block;
+  height: 300px;
+  width: 25%;
+  vertical-align: top;
+}
