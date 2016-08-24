@@ -18,6 +18,10 @@ Rails.application.routes.draw do
 
   post '/referee', to: 'propositions#outcome_decided'
 
+  get '/', to: 'application#index'
+
+  get '/dashboard', to: 'propositions#index'
+
   # NEW CODE
 
 end
