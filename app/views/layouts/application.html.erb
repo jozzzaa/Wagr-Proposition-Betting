@@ -17,10 +17,18 @@
     <div class="wrapper">
 
       <nav>
-        <div class="logo">
-          <%= link_to image_tag('logo.png', alt: 'Logo'), 'http://rubyonrails.org/' %>
-          <h1>Wágr</h1>
-        </div>
+        <% if logged_in? %>
+          <a href="/dashboard">
+        <% end %>
+        <% if !logged_in? %>
+          <a href="/">
+        <% end %>
+            <div class="logo">
+              <%= image_tag('logo.png', alt: 'Logo') %>
+              <h1>Wágr</h1>
+            </div>
+          </a>
+
         <div class="navigation">
 
           <button class="blue-btn">Create Proposition</button>

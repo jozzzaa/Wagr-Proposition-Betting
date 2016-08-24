@@ -1,10 +1,18 @@
-<%= form_tag '/session', method: 'post' do %>
+<div class="form-block">
 
-  <label for="">email</label>
-  <input type="text" name="email">
+  <h2>LOGIN</h2>
 
-  <label for="">password</label>
-  <input type="password" name="password">
+  <%= form_tag '/session', method: 'post' do %>
+    <label for="email">Enter your email</label>
+    <input type="text" name="email">
 
-  <button>login</button>
-<% end %>
+    <label for="password">Enter your password</label>
+    <input type="password" name="password">
+
+    <button class="form-btn blue-btn">Login</button>
+  <% end %>
+
+  <a href="">
+    <p>Don't have an account?</p>
+  </a>
+</div>
