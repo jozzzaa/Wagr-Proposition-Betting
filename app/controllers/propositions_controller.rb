@@ -65,7 +65,7 @@ class PropositionsController < ApplicationController
     if @prop.bets.count < 2
       @prop.bets.destroy
       @prop.destroy
-      redirect_to '/propositions'
+      redirect_to '/dashboard'
     else
       flash[:title]='Error!'
       flash[:notice]='You can no longer delete your proposition.'
@@ -77,7 +77,7 @@ class PropositionsController < ApplicationController
     @prop = Proposition.find(params[:id])
     @prop.bets.destroy
     @prop.destroy
-    redirect_to '/propositions'
+    redirect_to '/dashboard'
   end
 
   def decide_referee
@@ -86,7 +86,7 @@ class PropositionsController < ApplicationController
       @prop = arr_to_decide.sort_by { |k| k["updated_at"] }.first
       redirect_to "/propositions/#{@prop.id}"
     else
-      redirect_to "/propositions"
+      redirect_to "/dashboard"
     end
   end
 
