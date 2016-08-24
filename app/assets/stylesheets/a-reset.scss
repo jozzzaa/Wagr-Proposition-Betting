@@ -1,0 +1,58 @@
+/** {
+  box-sizing: border-box;
+}*/
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+blockquote,
+figure,
+ol,
+ul  {
+  margin: 0;
+  padding: 0;
+}
+
+/*to fix bug in ie*/
+main,
+li {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-size: inherit;
+}
+
+a,
+button {
+  color: inherit;
+  transition: .3s;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
