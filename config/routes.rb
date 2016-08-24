@@ -12,4 +12,12 @@ Rails.application.routes.draw do
   # destroying a session / logging out
   delete '/session', to: 'session#destroy'
 
+  # NEW CODE
+
+  get '/referee', to: 'propositions#decide_referee'
+
+  post '/referee', to: 'propositions#outcome_decided'
+
+  # NEW CODE
+
 end
