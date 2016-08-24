@@ -69,3 +69,4 @@
 	Bet.create(user_id: u2.id, proposition_id: p3.id, bet_side:  false, amount: 10.00, created_at: '08/23/2016/12/20/00')
 
 	Bet.create(user_id: u2.id, proposition_id: p3.id, bet_side:  false, amount: 10.00, created_at: '08/23/2016/12/20/00')
++

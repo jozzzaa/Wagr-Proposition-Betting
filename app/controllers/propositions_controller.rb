@@ -86,7 +86,7 @@ class PropositionsController < ApplicationController
       @prop = arr_to_decide.sort_by { |k| k["updated_at"] }.first
       redirect_to "/propositions/#{@prop.id}"
     else
-      redirect_to "/dashboard"
+      render "/propositions/end.html.erb"
     end
   end
 
