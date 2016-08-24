@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160822060710) do
+ActiveRecord::Schema.define(version: 20160823113532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20160822060710) do
     t.integer  "user_id"
     t.integer  "proposition_id"
     t.boolean  "bet_side"
-    t.string   "outcome"
     t.integer  "amount"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
@@ -35,6 +34,7 @@ ActiveRecord::Schema.define(version: 20160822060710) do
     t.datetime "deadline"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "outcome"
     t.index ["user_id"], name: "index_propositions_on_user_id", using: :btree
   end
 
