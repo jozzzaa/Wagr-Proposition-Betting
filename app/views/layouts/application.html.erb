@@ -14,8 +14,6 @@
 
   <body>
 
-    <%= session[:user_id]%>
-
     <div class="wrapper">
 
       <nav>
@@ -27,15 +25,25 @@
 
           <button class="blue-btn">Create Proposition</button>
 
-          <%= form_tag '/session', method:'delete' do %>
-          <button>Log Out</button>
+          <% if logged_in? %>
+            <%= form_tag '/session', method:'delete' do %>
+              <button>Log Out</button>
+            <% end %>
           <% end %>
 
-          <%= form_tag '/session/new', method:'get' do %>
-          <button>Log In</button>
+          <% if !logged_in? %>
+            <%= form_tag '/session/new', method:'get' do %>
+              <button>Log In</button>
+            <% end %>
           <% end %>
 
-          <button>Referee</button>
+          <% if current_user  %>
+            <% if admin? || referee? %>
+              <%= form_tag '/referee', method:'get' do %>
+                <button>Referee</button>
+              <% end %>
+            <% end %>
+          <% end %>
 
         </div>
       </nav>
