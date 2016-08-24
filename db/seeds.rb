@@ -33,11 +33,11 @@
 	password: "pudding", account_balance: 100.00, account_type: "standard" )
 
 
-	p1 = Proposition.create(user_id: u1.id, title: "Will Et Go Home", description: "I want to know whats going to happen", image: "http://thepeoplesmovies.com/wp-content/uploads/2012/05/etbikescene-300x160.jpg", deadline: '25/08/2016/20/30/00', outcome: 'nil' )
+	p1 = Proposition.create(user_id: u1.id, title: "Will Et Go Home", description: "I want to know whats going to happen", image: "http://thepeoplesmovies.com/wp-content/uploads/2012/05/etbikescene-300x160.jpg", deadline: '23/08/2016/20/30/00', outcome: 'nil' )
 
-	p2 = Proposition.create(user_id: u2.id, title: "Can Hasslehoff Finish A Burger", description: "he has to eat the whole thing", image: "https://wehatesit.files.wordpress.com/2015/10/david-hasselhoff.jpg", deadline: '09/10/2016/15/20/00', outcome: 'nil' )
+	p2 = Proposition.create(user_id: u2.id, title: "Can Hasslehoff Finish A Burger", description: "he has to eat the whole thing", image: "https://wehatesit.files.wordpress.com/2015/10/david-hasselhoff.jpg", deadline: '09/08/2016/15/20/00', outcome: 'nil' )
 
-	p3 = Proposition.create(user_id: u2.id, title: "The queen of dragons will have her brother killed next episode", description: "In the last episode of Game of Thrones, Daenerys Targaryen's brother threathen her life. Do you think she will rise up and kill him or do you think she will let it go?", image: "http://digitalspyuk.cdnds.net/16/25/980x490/landscape-1466508335-20160602-ep609-publicity-still-00400095499.jpg", deadline: '28/10/2016/15/20/00', outcome: 'nil' )
+	p3 = Proposition.create(user_id: u2.id, title: "The queen of dragons will have her brother killed next episode", description: "In the last episode of Game of Thrones, Daenerys Targaryen's brother threathen her life. Do you think she will rise up and kill him or do you think she will let it go?", image: "http://digitalspyuk.cdnds.net/16/25/980x490/landscape-1466508335-20160602-ep609-publicity-still-00400095499.jpg", deadline: '28/07/2016/15/20/00', outcome: 'nil' )
 
 	p4 = Proposition.create(user_id: u2.id, title: "It will be sunny in Adelaide tomorrow with <5% precipitation", description: "Adelaide is normally very sunny, tomrrow however the weather forecast predicts rainy weather. But this is wager and I want to bet against the odds, I think it will stay sunny.", image: "http://www.abc.net.au/news/image/658928-3x2-940x627.jpg", deadline: '29/10/2016/15/20/00', outcome: 'nil' )
 
