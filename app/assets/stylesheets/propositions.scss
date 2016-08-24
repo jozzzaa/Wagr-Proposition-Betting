@@ -1,3 +1,139 @@
 // Place all the styles related to the propositions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// HERO
+
+.hero {
+  position: relative;
+  margin-top: -50px;
+}
+
+.hero-text {
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.hero-text > h3 {
+  width: 50%;
+  margin: 10px auto;
+}
+
+.hero img {
+  width: 100%;
+}
+
+.highlight {
+  font-weight: 500;
+}
+
+// Prop Holder
+
+.holder-4-full {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.prop {
+  display: inline-block;
+  width: 23%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  margin: 1% 1%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.holder-4-full > .prop > .overlay {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 70%;
+  width: 100%;
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  background: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  background: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+.prop-blurb {
+  position: absolute;
+  bottom: 2.5%;
+  left: 5%;
+  width: 85%;
+}
+
+.prop-holder > img {
+  margin: 50px 50% 10px 49%;
+  width: 25px;
+}
+
+.blurb-left {
+  display: inline-block;
+  width: 45%;
+  vertical-align: bottom;
+  margin: 10px 0px 10px 0px;
+}
+
+.blurb-left > p {
+  margin: 0;
+}
+
+.blurb-right {
+  display: inline-block;
+  width: 53%;
+  vertical-align: bottom;
+  margin: 10px 0px 10px 0px;
+
+}
+
+.blurb-right > * {
+  float: right;
+  padding: 0px 3px 0px 3px;
+}
+
+.blurb-right > img {
+  height: 20px;
+  vertical-align: middle;
+}
+
+.blurb-right > p {
+  line-height: 20px;
+  vertical-align: top;
+  margin: 0;
+
+}
+
+
+
+
+// ABOUT SECTION
+
+.about {
+  display: flex;
+  margin-top: 50px;
+}
+
+.left-title {
+  width: 25%;
+  // padding-top: 75px;
+}
+
+.right-content {
+  width: 60%;
+}
+
+.right-content > p {
+  margin-top: 0px;
+}
