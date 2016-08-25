@@ -284,7 +284,7 @@ select::-moz-focus-inner {
 .stats {
   width: 100%;
   margin: 0px 0px 20px 0px;
-  background-color: #292b44;
+  background-color: #272841;
   height: 400px;
 }
 
@@ -377,4 +377,46 @@ select::-moz-focus-inner {
 .btn-yes, img, .btn-yes:focus, img:focus {
   outline: 0 !important;
   border:0 none !important;
+}
+
+.acc-total {
+  width: 100%;
+  text-align: center;
+  padding: 30px 0px 30px 0px;
+}
+
+.acc-total > h2 {
+  font-weight: 700;
+  color: #55D49D;
+}
+
+.acc-total p {
+  margin: 0;
+  font-size: 0.7em;
+}
+
+.dashboard-octa {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #111121;
+}
+
+.octa-holder {
+  box-sizing: border-box;
+  width: 50%;
+  background-color: #1e1f36;
+  padding: 18px 12px 18px 12px;
+  text-align: center;
+}
+
+.octa-holder p {
+  margin: 0;
+  font-size: 0.7em;
+}
+
+.octa-holder h4 {
+  margin: 0px 0px 5px 0px;
+  padding: 0;
+  font-weight: 500;
+  font-size: 1.1em;
 }
