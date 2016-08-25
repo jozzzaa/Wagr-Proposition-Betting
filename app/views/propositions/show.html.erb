@@ -1,7 +1,4 @@
 
-<p><%= flash[:title] %></p>
-<p><%= flash[:notice] %></p>
-
 <div class="show-holder">
 
   <div class="content">
@@ -100,12 +97,25 @@
 <% end %>
 </div>
 
+<div id="deadline"><%=@prop.deadline%></div>
+<div style="color: white" id="getting-started"></div>
+
+<script type="text/javascript">
+var $deadline = $('#deadline').html();
+  $("#getting-started")
+  .countdown($deadline, function(event) {
+    $(this).text(
+      event.strftime('%D days %H:%M:%S')
+    );
+  });
+</script>
+
 <script>
   $('.btn-yes').on('click', function(event) {
     event.preventDefault();
     var $prop_id = $('#proposition_id').val();
-    $('.btn-yes').fadeOut(500);
-    $('.btn-no').fadeOut(500);
+    $('.btn-yes').fadeOut(200);
+    $('.btn-no').fadeOut(200);
 
     $.ajax({
       url: '/api/bets',
@@ -114,15 +124,15 @@
              },
       method: 'post'
     }).done(function(response) {
-      $('.heading').after('<p>' + response.user_name + ' voted ' + response.bet_side + '</p>' + ' <button style="text-decoration: underline">Delete</button>' + '<hr>');
+      $('.heading').after('<p class="vote">' + response.user_name + ' voted ' + response.bet_side + '</p>' + '</p><button class="delete" style="text-decoration: underline">Delete</button><hr class="line">');
     });
   });
 
   $('.btn-no').on('click', function(event) {
     event.preventDefault();
     var $prop_id = $('#proposition_id').val();
-    $('.btn-yes').fadeOut(500);
-    $('.btn-no').fadeOut(500);
+    $('.btn-yes').fadeOut(200);
+    $('.btn-no').fadeOut(200);
 
     $.ajax({
       url: '/api/bets',
@@ -131,23 +141,22 @@
              },
       method: 'post'
     }).done(function(response) {
-      $('.bets').prepend('<p>' + response.user_name + ' voted ' + response.bet_side + '</p>' + '<button class="delete">Delete</button>' + '<hr>');
+      $('.bets').prepend('<p class="vote">' + response.user_name + ' voted ' + response.bet_side + '</p><button class="delete" style="text-decoration: underline">Delete</button><hr class="line">');
     });
   });
 
   $('.delete').on('click', function(event) {
-    var $prop_id = $('#proposition_id').val();
-    $('.btn-yes').fadeOut(500);
-    $('.btn-no').fadeOut(500);
-
+    console.log('hello')
     $.ajax({
       url: '/api/bets',
-      data: { bet_side: "no",
+      data: { bet_id: $bet_id,
               proposition_id: $prop_id
              },
-      method: 'post'
+      method: 'delete'
     }).done(function(response) {
-      $('.bets').prepend('<p>' + response.user_name + ' voted ' + response.bet_side + '</p>' + ' <button class="delete" style="text-decoration: underline">Delete</button>' + '<hr>');
+      $('.vote').remove();
+      $('.line').remove();
+      $('.delete').remove();
     });
   });
 
