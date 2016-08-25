@@ -244,16 +244,55 @@ input {
   height: 400px;
 }
 
+.stats h4 {
+  font-size: 1.4em;
+  padding: 25px 0px 25px 0px;
+  margin: 0;
+}
+
+.side-panel h4 {
+  font-size: 1.4em;
+  padding: 25px 0px 25px 0px;
+  margin: 0;
+}
+
+.side-panel form button {
+  width: 100%;
+  height: 50px;
+  background-color: #55D49D;
+  margin-top: 10px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.side-panel form button:hover {
+  opacity: 0.8;
+}
+
+#no-btn {
+  background-color: #5E9ADC;
+
+}
+
+#delete-btn {
+  background-color: #FD564C;
+}
+
+#edit-btn {
+  /*background-color: #FD564C;*/
+}
+
 .ref-options {
   width: 100%;
   margin: 0px 0px 20px 0px;
   background-color: #292b44;
-  height: 200px;
+  padding: 15px
 }
 
 .admin-options {
   width: 100%;
   margin: 0px 0px 20px 0px;
   background-color: #292b44;
-  height: 200px;
+  padding: 15px
+
 }
