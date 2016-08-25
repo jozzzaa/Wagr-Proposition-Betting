@@ -59,12 +59,13 @@
     </div>
   </div>
 
+  <% if logged_in? %>
   <div class="side-panel">
-
     <div class="stats">
       <h4>Dashboard</h4>
     </div>
 
+     <% if admin? || referee? %>
     <div class="ref-options">
       <h4>Score this Proposition</h4>
       <form action="/referee" method="post">
@@ -80,7 +81,8 @@
         <button id="no-btn">Score as False</button>
       </form>
     </div>
-
+   <% end %>
+    <% if admin? %>
     <div class="admin-options">
       <h4>Admin Panel</h4>
       <form action="/propositions/<%= @prop.id %>/edit" method="get">
@@ -93,9 +95,9 @@
         <button id="delete-btn">Delete</button>
       </form>
     </div>
-
+  <% end %>
   </div>
-
+<% end %>
 </div>
 
 <script>

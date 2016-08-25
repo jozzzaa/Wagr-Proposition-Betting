@@ -11,5 +11,17 @@
   <input name="deadline"type="text" value="<%=@prop.deadline%>">
   <label for="">User ID</label>
   <input name="user_id"type="text" value="<%=@prop.user_id%>">
+   <label for="categories">Pick a Category</label>
+  <select name="categories" class="categories-drop">
+    <option value="">Click to Select</option>
+    <option value="TV Shows">TV Shows</option>
+    <option value="Movies">Movies</option>
+    <option value="Sports">Sports</option>
+    <option value="Celebrities">Celebrities</option>
+    <option value="People">People</option>
+    <option value="Politics">Politics</option>
+    <option value="Games">Games</option>
+    <option value="Other">Other</option>
+  </select>
   <button>Edit</button>
 </form>
