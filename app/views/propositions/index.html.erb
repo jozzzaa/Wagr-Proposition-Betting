@@ -89,12 +89,68 @@
         <h4>$<%= @profit_all %></h4>
       </div>
     </div>
+    <div class="chart">
+      <p>Previous 6 week performance</p>
+      <canvas id="myChart" width="100%" height="50px"></canvas>
+    </div>
+    <div class="funding">
+      <p>Fund your Account with $50</p>
+      <%= form_tag charges_path do %>
+        <article>
+          <% if flash[:error].present? %>
+            <div id="error_explanation">
+              <p><%= flash[:error] %></p>
+            </div>
+          <% end %>
+
+        </article>
+        <input type="hidden" name="custom_amount" value="50">
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-description="Fund Wagr Account"
+                data-amount="5000"
+                data-locale="auto"></script>
+      <% end %>
+      <a href="/charges/new">
+        <p id="more-options">More Options</p>
+      </a>
+    </div>
   </div>
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.js"></script>
 
 <script>
   var sidebar = document.getElementById('sticky-sidebar');
   Stickyfill.add(sidebar);
+</script>
+
+<script>
+
+var ctx = document.getElementById("myChart");
+Chart.defaults.global.legend.display = false;
+Chart.defaults.global.tooltips.enabled = false;
+
+var myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ["6w", "5w", "4w", "3w", "2w", "1w"],
+    datasets: [{
+      label: '# of Votes',
+      data: [3, 2, 5, 3, 19, 12],
+      backgroundColor: [ 'rgba(94, 154, 221, 0.5)' ],
+      borderColor: [ 'rgba(94, 154, 221, 1)' ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        display: true
+      }],
+      yAxes: [{
+        display: false
+      }]
+    }
+  }
+});
+
 </script>

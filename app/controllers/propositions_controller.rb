@@ -12,8 +12,8 @@ class PropositionsController < ApplicationController
     # if user.admin?
     @user = session[:user_id]
     user_search = User.find_by(id: session[:user_id])
-    @props = Proposition.last(8)
-    @prop_popular = Proposition.first(8).reverse
+    @props = Proposition.last(6)
+    @prop_popular = Proposition.first(6).reverse
     @current_wagers = user_search.bets.count
     @current_propositions = user_search.propositions.count
     @profit_30 = "70"
@@ -81,15 +81,9 @@ class PropositionsController < ApplicationController
 
   def destroy
     @prop = Proposition.find(params[:id])
-    if @prop.bets.count < 2
-      @prop.bets.destroy_all
-      @prop.destroy
-      redirect_to '/dashboard'
-    else
-      flash[:title]='Error!'
-      flash[:notice]='You can no longer delete your proposition.'
-      redirect_to "/propositions/#{@prop.id}"
-    end
+    @prop.bets.destroy_all
+    @prop.destroy
+    redirect_to '/dashboard'
   end
 
   def destroy_admin
