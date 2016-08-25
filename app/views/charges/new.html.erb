@@ -13,7 +13,7 @@
   <input type="hidden" name="custom_amount" value="50">
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
+          data-description="Fund Wagr Account"
           data-amount="5000"
           data-locale="auto"></script>
   <% end %>
@@ -33,7 +33,7 @@
     <input type="hidden" name="custom_amount" value="100">
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-            data-description="A month's subscription"
+            data-description="Fund Wagr Account"
             data-amount="10000"
             data-locale="auto"></script>
     <% end %>
@@ -53,7 +53,7 @@
       <input type="hidden" name="custom_amount" value="150">
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="A month's subscription"
+              data-description="Fund Wagr Account"
               data-amount="15000"
               data-locale="auto"></script>
       <% end %>
