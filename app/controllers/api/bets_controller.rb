@@ -17,7 +17,9 @@ module Api
 
       user_name = @bet.user.user_name
       bet_side = @bet.bet_side
-      render json: { user_name: user_name, bet_side: bet_side }
+      bet_id = @bet.id
+      prop_id = @prop.id
+      render json: { user_name: user_name, bet_side: bet_side, bet_id: bet_id, prop_id: prop_id }
     end
 
   end
