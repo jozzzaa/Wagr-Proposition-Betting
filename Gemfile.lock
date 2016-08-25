@@ -42,8 +42,6 @@ GEM
     bcrypt (3.1.11)
     builder (3.2.2)
     byebug (9.0.5)
-    chart-js-rails (0.1.0)
-      railties (> 3.1)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -193,7 +191,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
-  chart-js-rails
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
