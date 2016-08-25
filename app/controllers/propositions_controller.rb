@@ -48,7 +48,12 @@ class PropositionsController < ApplicationController
 
   def show
     # you want to show error messages flash[:title] and flash[:notice] if they exist (see edit and destroy methods below)
+    user_search = User.find_by(id: session[:user_id])
     @prop = Proposition.find(params[:id])
+    @current_wagers = user_search.bets.count
+    @current_propositions = user_search.propositions.count
+    @profit_30 = "70"
+    @profit_all = "340"
     render :show
     # to show the proposition's bets under the proposition, do a loop with @prop.bets
   end
