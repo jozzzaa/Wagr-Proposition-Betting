@@ -39,7 +39,7 @@
       </div>
 
       <div class="bets">
-      <h5>Wagers</h5>
+      <h5 class="heading">Wagers</h5>
         <% @prop.bets.each do |bet| %>
           <p>
             <%= user = User.find_by(id:bet.user_id).user_name %> voted <%= bet.bet_side %>
@@ -114,7 +114,7 @@
              },
       method: 'post'
     }).done(function(response) {
-      $('.bets').prepend('<p>' + response.user_name + ' voted ' + response.bet_side + '</p>' + ' <button style="text-decoration: underline">Delete</button>' + '<hr>');
+      $('.heading').after('<p>' + response.user_name + ' voted ' + response.bet_side + '</p>' + ' <button style="text-decoration: underline">Delete</button>' + '<hr>');
     });
   });
 
