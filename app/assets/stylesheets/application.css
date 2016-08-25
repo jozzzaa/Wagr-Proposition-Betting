@@ -285,7 +285,7 @@ select::-moz-focus-inner {
   width: 100%;
   margin: 0px 0px 20px 0px;
   background-color: #292b44;
-  height: 400px;
+
 }
 
 .stats h4 {
@@ -419,4 +419,56 @@ select::-moz-focus-inner {
   padding: 0;
   font-weight: 500;
   font-size: 1.1em;
+}
+
+.chart {
+  padding: 20px;
+}
+
+.funding {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #111121;
+  background-color: #1e1f36;
+
+}
+
+.funding > p {
+  text-align: left;
+}
+
+.stripe-button-el span {
+  display: inline-block !important;
+  background-image: linear-gradient(#277fe3, #0d52a1) !important;
+  border: 0px !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 1em !important;
+  line-height: 45px !important;
+  transition: 0.5s !important;
+  border-bottom: 1px solid #09407e !important;
+  line-height: 45px !important;
+  height: 45px !important;
+  padding: 0px 22px !important;
+  text-shadow: 0px !important;
+  box-shadow: 0px !important;
+  border-top-color: none !important;
+  border-top-style: none !important;
+  border-top-width: 0px !important;
+  border-right-color: none !important;
+  border-right-style: none !important;
+  border-right-width: 0px !important;
+  border-bottom-color: none !important;
+  border-bottom-style: none !important;
+  border-bottom-width: 0px !important;
+  border-left-color: none !important;
+  border-left-style: none !important;
+  border-left-width: 0px !important;
+}
+
+#more-options {
+  text-align: center;
+  font-size: 0.7em;
+  text-decoration: none;
+  cursor: pointer;
 }

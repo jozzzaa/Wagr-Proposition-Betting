@@ -12,8 +12,8 @@ class PropositionsController < ApplicationController
     # if user.admin?
     @user = session[:user_id]
     user_search = User.find_by(id: session[:user_id])
-    @props = Proposition.last(8)
-    @prop_popular = Proposition.first(8).reverse
+    @props = Proposition.last(6)
+    @prop_popular = Proposition.first(6).reverse
     @current_wagers = user_search.bets.count
     @current_propositions = user_search.propositions.count
     @profit_30 = "70"
