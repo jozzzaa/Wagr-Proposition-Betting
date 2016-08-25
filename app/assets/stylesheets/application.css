@@ -173,6 +173,11 @@ nav {
   background: linear-gradient(to bottom right, #4f91dd, #2d629e);
 }
 
+#welcome-message {
+  background-color: transparent;
+  cursor: auto;
+}
+
 /*FOOTER STYLES*/
 
 footer {
