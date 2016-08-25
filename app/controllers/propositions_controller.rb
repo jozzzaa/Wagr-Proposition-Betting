@@ -64,7 +64,7 @@ class PropositionsController < ApplicationController
   def destroy
     @prop = Proposition.find(params[:id])
     if @prop.bets.count < 2
-      @prop.bets.destroy
+      @prop.bets.destroy_all
       @prop.destroy
       redirect_to '/dashboard'
     else
