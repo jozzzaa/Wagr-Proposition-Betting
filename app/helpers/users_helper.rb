@@ -12,6 +12,14 @@ module UsersHelper
     end
   end
 
+  def deadline_passed?
+    if @prop.deadline > Time.now
+      return true
+    else
+      return false
+    end
+  end
+
   def admin?
     if current_user.account_type == "admin"
       return true
