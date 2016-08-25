@@ -234,3 +234,26 @@ input {
   border-radius: 5px;
   margin: 25px 0px 20px 0px
 }
+
+/*USER PANEL AND STATISTICS*/
+
+.stats {
+  width: 100%;
+  margin: 0px 0px 20px 0px;
+  background-color: #292b44;
+  height: 400px;
+}
+
+.ref-options {
+  width: 100%;
+  margin: 0px 0px 20px 0px;
+  background-color: #292b44;
+  height: 200px;
+}
+
+.admin-options {
+  width: 100%;
+  margin: 0px 0px 20px 0px;
+  background-color: #292b44;
+  height: 200px;
+}

@@ -1,4 +1,7 @@
 
+<p><%= flash[:title] %></p>
+<p><%= flash[:notice] %></p>
+
 <div class="show-holder">
 
   <div class="content">
@@ -8,9 +11,19 @@
       <div class="card-blurb">
         <h5><%= @prop.title %></h5>
         <div class="button-holder">
-          <%= image_tag('icons/tick-icon.png', alt: 'Tick Icon') %>
+          <form action="/bets" method="post">
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <input type="hidden" name="proposition_id" value="<%=@prop.id%>">
+            <input type="hidden" name="bet_side" value="yes">
+            <button><%= image_tag('icons/tick-icon.png', alt: 'Tick Icon') %></button>
+          </form>
           <h5>$<span>10</span></h5>
-          <%= image_tag('icons/cross-icon.png', alt: 'Tick Icon') %>
+          <form action="/bets" method="post">
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <input type="hidden" name="proposition_id" value="<%=@prop.id%>">
+            <input type="hidden" name="bet_side" value="no">
+            <button><%= image_tag('icons/cross-icon.png', alt: 'Tick Icon') %></button>
+          </form>
         </div>
       </div>
     </div>
@@ -25,15 +38,17 @@
         <% @prop.bets.each do |bet| %>
           <p>
             <%= user = User.find_by(id:bet.user_id).user_name %> voted <%= bet.bet_side %>
-            <!-- <% if admin? %>
-              <form action="/bets/<%= bet.id %>" method="post">
-                <input type="hidden" name="_method" value="delete">
-                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                <input type="hidden" name="id" value="<%=bet.id%>">
-                <input type="hidden" name="proposition_id" value="<%=@prop.id%>">
-                <button>Delete Bet</button>
-              </form>
-            <% end %> -->
+            <% if logged_in? %>
+              <% if admin? %>
+                <form action="/bets/<%= bet.id %>" method="post">
+                  <input type="hidden" name="_method" value="delete">
+                  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                  <input type="hidden" name="id" value="<%=bet.id%>">
+                  <input type="hidden" name="proposition_id" value="<%=@prop.id%>">
+                  <button>Delete Bet</button>
+                </form>
+              <% end %>
+            <% end %>
           </p>
           <hr>
         <%end%>
@@ -43,76 +58,39 @@
 
   <div class="side-panel">
 
+    <div class="stats">
+
+    </div>
+
+    <div class="ref-options">
+      <h5>Score this Proposition</h5>
+      <form action="/referee" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input type="hidden" name="outcome" value="true">
+        <input type="hidden" name="id" value="<%= @prop.id %>">
+        <button>Decide-Yes</button>
+      </form>
+      <form action="/referee" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input type="hidden" name="outcome" value="false">
+        <input type="hidden" name="id" value="<%= @prop.id %>">
+        <button>Decide-No</button>
+      </form>
+    </div>
+
+    <div class="admin-options">
+      <h5>Admin Panel</h5>
+      <form action="/propositions/<%= @prop.id %>" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input type="hidden" name="_method" value="delete">
+        <button>Delete</button>
+      </form>
+      <form action="/propositions/<%= @prop.id %>/edit" method="get">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <button>Edit</button>
+      </form>
+    </div>
+
   </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-<hr>
-
-
-
-
-
-<h1><%= @prop.title %></h1>
-
-<form action="/propositions/<%= @prop.id %>" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input type="hidden" name="_method" value="delete">
-  <button>Delete</button>
-</form>
-<form action="/propositions/<%= @prop.id %>/edit" method="get">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <button>Edit</button>
-</form>
-
-<form action="/referee" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input type="hidden" name="outcome" value="true">
-  <input type="hidden" name="id" value="<%= @prop.id %>">
-  <button>Decide-Yes</button>
-</form>
-
-<form action="/referee" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input type="hidden" name="outcome" value="false">
-  <input type="hidden" name="id" value="<%= @prop.id %>">
-  <button>Decide-No</button>
-</form>
-
-<form action="/bets" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input type="hidden" name="proposition_id" value="<%=@prop.id%>">
-  <input type="hidden" name="bet_side" value="yes">
-  <button>Bet-Yes</button>
-</form>
-
-<form action="/bets" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input type="hidden" name="proposition_id" value="<%=@prop.id%>">
-  <input type="hidden" name="bet_side" value="no">
-  <button>Bet-No</button>
-</form>
-
-<p><%= flash[:title] %></p>
-<p><%= flash[:notice] %></p>
-
-<% @prop.bets.each do |bet| %>
-  <%= user = User.find_by(id:bet.user_id).user_name %>
-  <p><%= bet.bet_side %></p>
-  <form action="/bets/<%= bet.id %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <input type="hidden" name="id" value="<%=bet.id%>">
-    <input type="hidden" name="proposition_id" value="<%=@prop.id%>">
-    <button>Delete Bet</button>
-  </form>
-<%end%>

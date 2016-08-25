@@ -14,21 +14,23 @@
   <div class="holder-4-full">
     <% @prop_popular.each do |prop| %>
       <div class="prop" style="background-image: url(<%= prop.image %>)">
-        <div class="overlay">
-          <div class="prop-blurb">
-            <h5><%= prop.title %></h5>
-            <div class="blurb-left">
-              <% timeToDeadline = (((prop.deadline - Time.now) /60) /60).floor %>
-              <p><%= number_with_delimiter(timeToDeadline, :delimiter => ',') %> hours</p>
-            </div>
-            <div class="blurb-right">
-              <%= image_tag('icons/cross-icon.png', alt: 'Cross Icon') %>
-              <p>23</p>
-              <%= image_tag('icons/tick-icon.png', alt: 'Tick Icon') %>
-              <p>47</p>
+        <a href="/propositions/<%= prop.id %>">
+          <div class="overlay">
+            <div class="prop-blurb">
+              <h5><%= prop.title %></h5>
+              <div class="blurb-left">
+                <% timeToDeadline = (((prop.deadline - Time.now) /60) /60).floor %>
+                <p><%= number_with_delimiter(timeToDeadline, :delimiter => ',') %> hours</p>
+              </div>
+              <div class="blurb-right">
+                <%= image_tag('icons/cross-icon.png', alt: 'Cross Icon') %>
+                <p>23</p>
+                <%= image_tag('icons/tick-icon.png', alt: 'Tick Icon') %>
+                <p>47</p>
+              </div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     <% end %>
   </div>
@@ -41,21 +43,23 @@
   <div class="holder-4-full">
     <% @props.each do |prop| %>
       <div class="prop" style="background-image: url(<%= prop.image %>)">
-        <div class="overlay">
-          <div class="prop-blurb">
-            <h5><%= prop.title %></h5>
-            <div class="blurb-left">
-              <% timeToDeadline = (((prop.deadline - Time.now) /60) /60).floor %>
-              <p><%= number_with_delimiter(timeToDeadline, :delimiter => ',') %> hours</p>
-            </div>
-            <div class="blurb-right">
-              <%= image_tag('icons/cross-icon.png', alt: 'Cross Icon') %>
-              <p>23</p>
-              <%= image_tag('icons/tick-icon.png', alt: 'Tick Icon') %>
-              <p>47</p>
+        <a href="/propositions/<%= prop.id %>">
+          <div class="overlay">
+            <div class="prop-blurb">
+              <h5><%= prop.title %></h5>
+              <div class="blurb-left">
+                <% timeToDeadline = (((prop.deadline - Time.now) /60) /60).floor %>
+                <p><%= number_with_delimiter(timeToDeadline, :delimiter => ',') %> hours</p>
+              </div>
+              <div class="blurb-right">
+                <%= image_tag('icons/cross-icon.png', alt: 'Cross Icon') %>
+                <p>23</p>
+                <%= image_tag('icons/tick-icon.png', alt: 'Tick Icon') %>
+                <p>47</p>
+              </div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     <% end %>
   </div>
