@@ -81,15 +81,9 @@ class PropositionsController < ApplicationController
 
   def destroy
     @prop = Proposition.find(params[:id])
-    if @prop.bets.count < 2
-      @prop.bets.destroy_all
-      @prop.destroy
-      redirect_to '/dashboard'
-    else
-      flash[:title]='Error!'
-      flash[:notice]='You can no longer delete your proposition.'
-      redirect_to "/propositions/#{@prop.id}"
-    end
+    @prop.bets.destroy_all
+    @prop.destroy
+    redirect_to '/dashboard'
   end
 
   def destroy_admin
