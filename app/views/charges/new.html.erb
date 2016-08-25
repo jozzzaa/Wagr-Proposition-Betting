@@ -6,13 +6,54 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Credit $50.00 to your Wagr Account</span>
+      <span style="color: white">Credit $50 your Wagr Account</span>
     </label>
-  </article>
 
+  </article>
+  <input type="hidden" name="custom_amount" value="50">
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
           data-amount="5000"
           data-locale="auto"></script>
-<% end %>
+  <% end %>
+
+  <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="amount">
+        <span style="color: white">Credit $100 your Wagr Account</span>
+      </label>
+
+    </article>
+    <input type="hidden" name="custom_amount" value="100">
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="A month's subscription"
+            data-amount="10000"
+            data-locale="auto"></script>
+    <% end %>
+
+    <%= form_tag charges_path do %>
+      <article>
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
+        <label class="amount">
+          <span style="color: white">Credit $150 your Wagr Account</span>
+        </label>
+
+      </article>
+      <input type="hidden" name="custom_amount" value="150">
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="A month's subscription"
+              data-amount="15000"
+              data-locale="auto"></script>
+      <% end %>

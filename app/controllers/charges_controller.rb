@@ -5,7 +5,7 @@ class ChargesController < ApplicationController
 
   def create
     # Amount in cents
-    @amount = 5000
+    @amount = params[:custom_amount]
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -20,7 +20,7 @@ class ChargesController < ApplicationController
     )
 
     u = User.find_by(id: session[:user_id])
-    u.account_balance +=50
+    u.account_balance += @amount.to_i
     u.save
 
   rescue Stripe::CardError => e
