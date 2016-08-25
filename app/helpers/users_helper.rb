@@ -44,4 +44,12 @@ module UsersHelper
     end
   end
 
+  def user_voted?
+    if @prop.bets.where(user_id: session[:user_id]).count >= 1
+      return true
+    else
+      return false
+    end
+  end
+
 end

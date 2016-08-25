@@ -21,7 +21,7 @@ class PropositionsController < ApplicationController
     @prop.image = params[:image]
     @prop.deadline = params[:deadline]
     @prop.user_id = params[:user_id]
-    # @prop.category = params[:categories]
+    @prop.category = params[:categories]
     if @prop.save
       redirect_to "/propositions/#{@prop.id}"
     else
