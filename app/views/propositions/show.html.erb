@@ -59,35 +59,35 @@
   <div class="side-panel">
 
     <div class="stats">
-
+      <h4>Dashbaord</h4>
     </div>
 
     <div class="ref-options">
-      <h5>Score this Proposition</h5>
+      <h4>Score this Proposition</h4>
       <form action="/referee" method="post">
         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
         <input type="hidden" name="outcome" value="true">
         <input type="hidden" name="id" value="<%= @prop.id %>">
-        <button>Decide-Yes</button>
+        <button>Score as True</button>
       </form>
       <form action="/referee" method="post">
         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
         <input type="hidden" name="outcome" value="false">
         <input type="hidden" name="id" value="<%= @prop.id %>">
-        <button>Decide-No</button>
+        <button id="no-btn">Score as False</button>
       </form>
     </div>
 
     <div class="admin-options">
-      <h5>Admin Panel</h5>
+      <h4>Admin Panel</h4>
+      <form action="/propositions/<%= @prop.id %>/edit" method="get">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <button id="edit-btn">Edit</button>
+      </form>
       <form action="/propositions/<%= @prop.id %>" method="post">
         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
         <input type="hidden" name="_method" value="delete">
-        <button>Delete</button>
-      </form>
-      <form action="/propositions/<%= @prop.id %>/edit" method="get">
-        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-        <button>Edit</button>
+        <button id="delete-btn">Delete</button>
       </form>
     </div>
 
