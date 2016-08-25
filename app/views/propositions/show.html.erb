@@ -131,7 +131,23 @@
              },
       method: 'post'
     }).done(function(response) {
-      $('.bets').prepend('<p>' + response.user_name + ' voted ' + response.bet_side + '</p>' + ' <button style="text-decoration: underline">Delete</button>' + '<hr>');
+      $('.bets').prepend('<p>' + response.user_name + ' voted ' + response.bet_side + '</p>' + '<button class="delete">Delete</button>' + '<hr>');
+    });
+  });
+
+  $('.delete').on('click', function(event) {
+    var $prop_id = $('#proposition_id').val();
+    $('.btn-yes').fadeOut(500);
+    $('.btn-no').fadeOut(500);
+
+    $.ajax({
+      url: '/api/bets',
+      data: { bet_side: "no",
+              proposition_id: $prop_id
+             },
+      method: 'post'
+    }).done(function(response) {
+      $('.bets').prepend('<p>' + response.user_name + ' voted ' + response.bet_side + '</p>' + ' <button class="delete" style="text-decoration: underline">Delete</button>' + '<hr>');
     });
   });
 
