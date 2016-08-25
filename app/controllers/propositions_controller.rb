@@ -10,9 +10,14 @@ class PropositionsController < ApplicationController
 
   def index
     # if user.admin?
-    @user = session[:user_id] # this is for listing the user's stats on the right.
+    @user = session[:user_id]
+    user_search = User.find_by(id: session[:user_id])
     @props = Proposition.last(8)
     @prop_popular = Proposition.first(8).reverse
+    @current_wagers = user_search.bets.count
+    @current_propositions = user_search.propositions.count
+    @profit_30 = "70"
+    @profit_all = "340"
     # need to go into bets and count proposition_id and sort by that - this site tells exactly how to do it (I didn't have time to figure this out) - http://stackoverflow.com/questions/8696005/rails-3-activerecord-order-by-count-on-association
     if logged_in?
       render :index
