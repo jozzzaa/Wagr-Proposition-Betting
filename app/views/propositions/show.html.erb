@@ -43,7 +43,7 @@
         <% @prop.bets.each do |bet| %>
           <p>
             <%= user = User.find_by(id:bet.user_id).user_name %> voted <%= bet.bet_side %>
-            <% if logged_in? && admin? && deadline_passed? %>
+            <% if logged_in? && deadline_passed? && (admin? || bet.user_id == session[:user_id]) %>
               <form action="/bets/<%= bet.id %>" method="post">
                 <input type="hidden" name="_method" value="delete">
                 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
