@@ -45,14 +45,19 @@
 
 .prop {
   display: inline-block;
-  width: 23%;
-  height: 300px;
+  width: 280px;
+  height: 280px;
   overflow: hidden;
   position: relative;
   margin: 1% 1%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+}
+
+.prop-index {
+  width: 23%;
+  height: 280px;
 }
 
 .holder-4-full a {
@@ -307,12 +312,6 @@
 hr {
   opacity: 0.1;
 }
-
-
-
-
-
-
 
 
 .side-panel {

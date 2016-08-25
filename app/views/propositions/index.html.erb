@@ -1,100 +1,62 @@
 
-<div class="hero">
-  <div class="hero-text">
-    <h2>Predict the <span class="highlight">Future.</span></h2>
-    <h3>Browse and create wagers about anything you believe the future holds.</h3>
-  </div>
-  <%= image_tag('hero2.png', alt: 'Hero') %>
-</div>
+<div class="dashboard-content">
 
-<div class="prop-holder">
-  <%= image_tag('icons/popular-icon.png', alt: 'Popular Icon') %>
-  <h4>POPULAR</h4>
-
-  <div class="holder-4-full">
-    <% @prop_popular.each do |prop| %>
-      <div class="prop" style="background-image: url(<%= prop.image %>)">
-        <a href="/propositions/<%= prop.id %>">
-          <div class="overlay">
-            <div class="prop-blurb">
-              <h5><%= prop.title %></h5>
-              <div class="blurb-left">
-                <% timeToDeadline = (((prop.deadline - Time.now) /60) /60).floor %>
-                <p><%= number_with_delimiter(timeToDeadline, :delimiter => ',') %> hours</p>
-              </div>
-              <div class="blurb-right">
-                <%= image_tag('icons/cross-icon.png', alt: 'Cross Icon') %>
-                <p>23</p>
-                <%= image_tag('icons/tick-icon.png', alt: 'Tick Icon') %>
-                <p>47</p>
+  <div class="prop-holder">
+    <h4 class="dashboard-title dt-top">POPULAR</h4>
+    <div class="holder-4-full">
+      <% @prop_popular.each do |prop| %>
+        <div class="prop" style="background-image: url(<%= prop.image %>)">
+          <a href="/propositions/<%= prop.id %>">
+            <div class="overlay">
+              <div class="prop-blurb">
+                <h5><%= prop.title %></h5>
+                <div class="blurb-left">
+                  <% timeToDeadline = (((prop.deadline - Time.now) /60) /60).floor %>
+                  <p><%= number_with_delimiter(timeToDeadline, :delimiter => ',') %> hours</p>
+                </div>
+                <div class="blurb-right">
+                  <%= image_tag('icons/cross-icon.png', alt: 'Cross Icon') %>
+                  <p>23</p>
+                  <%= image_tag('icons/tick-icon.png', alt: 'Tick Icon') %>
+                  <p>47</p>
+                </div>
               </div>
             </div>
-          </div>
-        </a>
-      </div>
-    <% end %>
+          </a>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
-
-<div class="prop-holder">
-  <%= image_tag('icons/new-icon.png', alt: 'New Icon') %>
-  <h4>NEW</h4>
-
-  <div class="holder-4-full">
-    <% @props.each do |prop| %>
-      <div class="prop" style="background-image: url(<%= prop.image %>)">
-        <a href="/propositions/<%= prop.id %>">
-          <div class="overlay">
-            <div class="prop-blurb">
-              <h5><%= prop.title %></h5>
-              <div class="blurb-left">
-                <% timeToDeadline = (((prop.deadline - Time.now) /60) /60).floor %>
-                <p><%= number_with_delimiter(timeToDeadline, :delimiter => ',') %> hours</p>
-              </div>
-              <div class="blurb-right">
-                <%= image_tag('icons/cross-icon.png', alt: 'Cross Icon') %>
-                <p>23</p>
-                <%= image_tag('icons/tick-icon.png', alt: 'Tick Icon') %>
-                <p>47</p>
+  <div class="prop-holder">
+    <h4 class="dashboard-title">NEW</h4>
+    <div class="holder-4-full">
+      <% @props.each do |prop| %>
+        <div class="prop" style="background-image: url(<%= prop.image %>)">
+          <a href="/propositions/<%= prop.id %>">
+            <div class="overlay">
+              <div class="prop-blurb">
+                <h5><%= prop.title %></h5>
+                <div class="blurb-left">
+                  <% timeToDeadline = (((prop.deadline - Time.now) /60) /60).floor %>
+                  <p><%= number_with_delimiter(timeToDeadline, :delimiter => ',') %> hours</p>
+                </div>
+                <div class="blurb-right">
+                  <%= image_tag('icons/cross-icon.png', alt: 'Cross Icon') %>
+                  <p>23</p>
+                  <%= image_tag('icons/tick-icon.png', alt: 'Tick Icon') %>
+                  <p>47</p>
+                </div>
               </div>
             </div>
-          </div>
-        </a>
-      </div>
-    <% end %>
+          </a>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
-<div class="about">
-  <div class="left-title">
-    <h4>ABOUT</h4>
-  </div>
-  <div class="right-content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet orci nisi, ut commodo massa malesuada sed. Aenean sed ipsum enim. Quisque convallis elit pretium, rhoncus velit id, rhoncus arcu. Praesent ultrices mattis ipsum in condimentum. Sed at feugiat ex, sed bibendum tortor. Nunc sodales lectus id lectus ullamcorper viverra. Quisque et odio vitae ipsum laoreet cursus.</p>
-
-    <p>In mi nunc, convallis in ultrices sit amet, pharetra quis sapien. Duis eget leo metus. Nulla dui mi, pharetra tristique fermentum nec, cursus eget enim. Donec eget vulputate turpis, dapibus blandit ipsum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed accumsan, leo at facilisis mollis, lorem purus sodales nibh, at pretium neque nulla ac urna. Praesent ornare eros et nulla tincidunt, et blandit tortor ultricies. Pellentesque fringilla nulla a aliquam condimentum. Nunc laoreet sem orci, ac maximus velit sodales in. Vestibulum ullamcorper libero eget lacus posuere suscipit. Proin blandit aliquam pretium. Pellentesque in viverra erat. Nulla facilisi. Fusce enim urna, eleifend id finibus non, eleifend non lorem. Ut quis dolor vel mi aliquet suscipit at vitae mauris. Sed ut nisi ultricies, tristique lorem gravida, faucibus augue.</p>
+<div class="dashboard-panel">
+  <div class="stats">
+    <h4>Dashboard</h4>
   </div>
 </div>
-
-
-
-
-
-
-
-<!-- <h4>Propositions</h4>
-
-<% @props.each do |prop| %>
-
-  <p><%= prop.title %></p>
-  <form action="/propositions/<%= prop.id %>" method="post">
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <input type="hidden" name="_method" value="delete">
-    <button>Delete</button>
-  </form>
-  <form action="/propositions/<%= prop.id %>/edit" method="get">
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <button>Edit</button>
-  </form>
-
-<%end%> -->

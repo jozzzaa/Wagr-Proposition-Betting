@@ -13,7 +13,7 @@
 
   <div class="holder-4-full">
     <% @prop_popular.each do |prop| %>
-      <div class="prop" style="background-image: url(<%= prop.image %>)">
+      <div class="prop prop-index" style="background-image: url(<%= prop.image %>)">
         <a href="/propositions/<%= prop.id %>">
           <div class="overlay">
             <div class="prop-blurb">
@@ -42,7 +42,7 @@
 
   <div class="holder-4-full">
     <% @props.each do |prop| %>
-      <div class="prop" style="background-image: url(<%= prop.image %>)">
+      <div class="prop prop-index" style="background-image: url(<%= prop.image %>)">
         <a href="/propositions/<%= prop.id %>">
           <div class="overlay">
             <div class="prop-blurb">

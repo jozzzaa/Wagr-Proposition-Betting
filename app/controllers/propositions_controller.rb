@@ -3,8 +3,8 @@ class PropositionsController < ApplicationController
   def index
     # if user.admin?
     @user = session[:user_id] # this is for listing the user's stats on the right.
-    @props = Proposition.last(4)
-    @prop_popular = Proposition.first(4).reverse
+    @props = Proposition.last(8)
+    @prop_popular = Proposition.first(8).reverse
     # need to go into bets and count proposition_id and sort by that - this site tells exactly how to do it (I didn't have time to figure this out) - http://stackoverflow.com/questions/8696005/rails-3-activerecord-order-by-count-on-association
     render :index
   end
@@ -21,7 +21,7 @@ class PropositionsController < ApplicationController
     @prop.image = params[:image]
     @prop.deadline = params[:deadline]
     @prop.user_id = params[:user_id]
-    # I'm presuming we don't need to save the user_id here? Does it automatically do it for us?
+    # @prop.category = params[:categories]
     if @prop.save
       redirect_to "/propositions/#{@prop.id}"
     else
