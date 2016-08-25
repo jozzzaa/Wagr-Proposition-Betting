@@ -30,6 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Stripe
 gem 'stripe'
 
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
