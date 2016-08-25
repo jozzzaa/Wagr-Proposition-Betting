@@ -472,3 +472,17 @@ select::-moz-focus-inner {
   text-decoration: none;
   cursor: pointer;
 }
+
+#deadline {
+  display: none;
+}
+
+#countdown {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 0px 10px 0px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
