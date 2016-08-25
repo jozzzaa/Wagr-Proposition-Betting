@@ -31,7 +31,14 @@
 
         <div class="navigation">
 
-          <button class="blue-btn">Create Proposition</button>
+          <% if logged_in? %>
+          <a href="/propositions/new">
+          <% end %>
+          <% if !logged_in? %>
+          <a href="/users/new">
+          <% end %>
+            <button class="blue-btn">Create Proposition</button>
+          </a>
 
           <% if logged_in? %>
             <%= form_tag '/session', method:'delete' do %>

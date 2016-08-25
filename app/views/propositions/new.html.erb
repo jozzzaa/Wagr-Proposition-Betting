@@ -1,14 +1,38 @@
-<h1>Create a Proposition</h1>
+<div class="form-block">
 
-<form action="/propositions" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <label for="">Title</label>
-  <input name="title" type="text">
-  <label for="">Description</label>
-  <input name="description"type="text">
-  <label for="">Deadline</label>
-  <input name="deadline"type="text">
-  <label for="">User ID</label>
-  <input name="user_id"type="text">
-  <button>Create</button>
-</form>
+  <h2>Create a Proposition</h2>
+
+  <%= form_tag '/propositions', method: 'post' do %>
+
+    <input name="user_id"type="hidden" value="<%= session[:user_id] %>">
+
+    <label for="title">Title</label>
+    <input name="title" type="text">
+
+    <label for="description">Description</label>
+    <input name="description"type="text">
+
+    <label for="deadline">Deadline</label>
+    <input name="deadline"type="datetime" placeholder="dd-mm-yyyy hh:mm">
+
+    <label for="image">Image Url</label>
+    <input name="image"type="image" placeholder="dd-mm-yyyy hh:mm">
+
+    <label for="categories">Pick a Category</label>
+    <select name="categories" class="categories-drop">
+      <option value="">Click to Select</option>
+      <option value="TV Shows">TV Shows</option>
+      <option value="Movies">Movies</option>
+      <option value="Sports">Sports</option>
+      <option value="Celebrities">Celebrities</option>
+      <option value="People">People</option>
+      <option value="Politics">Politics</option>
+      <option value="Games">Games</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <button class="form-btn blue-btn">Create</button>
+
+  <% end %>
+
+</div>

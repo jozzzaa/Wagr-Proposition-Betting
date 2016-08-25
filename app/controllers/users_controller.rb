@@ -21,7 +21,8 @@ class UsersController < ApplicationController
     @user.account_balance = 0
     @user.account_type = "standard"
     if @user.save
-      redirect_to '/users'
+      redirect_to '/propositions/new'
+      session[:user_id] = @user.id
     else
       render :new
     end

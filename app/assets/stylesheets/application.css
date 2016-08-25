@@ -145,6 +145,7 @@ nav {
   vertical-align: middle;
   transition: 0.5s;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .navigation button:hover {
@@ -235,6 +236,44 @@ input {
   margin: 25px 0px 20px 0px
 }
 
+/*DROPDOWN BOX STYLES*/
+
+select {
+  width: 100%;
+  margin-top: 5px;
+  height: 40px;
+  line-height: 40px;
+  background-color: white;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select {
+    height:40px;
+    line-height:40px;
+    background:#f4f4f4;
+  }
+}
+
+select::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+@-moz-document url-prefix() {
+  select {
+    padding: 20px 0!important;
+  }
+}
+
+@media screen\0 {
+  select {
+    height:40px;
+    line-height:40px;
+  }
+}
+
+
+
 /*USER PANEL AND STATISTICS*/
 
 .stats {
@@ -295,4 +334,27 @@ input {
   background-color: #292b44;
   padding: 15px
 
+}
+
+
+/* DASHBOARD STYLES*/
+
+.dashboard-content {
+  display: inline-block;
+  width: 74%;
+}
+
+.dashboard-panel {
+  display: inline-block;
+  width: 25%;
+  height: 400px;
+  vertical-align: top;
+}
+
+.dashboard-title {
+  margin: 50px 0px 15px 0px;
+}
+
+.dt-top {
+  margin-top: 10px;
 }
