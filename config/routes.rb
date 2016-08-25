@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'propositions#index'
 
+  post '/api/bets', to: 'api/bets#create'
+
   # NEW CODE
 
 end
