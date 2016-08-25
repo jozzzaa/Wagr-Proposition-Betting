@@ -104,10 +104,10 @@
           <% end %>
 
         </article>
-        <input type="hidden" name="custom_amount" value="50">
+        <input type="hidden" name="custom_amount" value="5000">
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                data-description="Fund Wagr Account"
+                data-description="Credit Wagr Account"
                 data-amount="5000"
                 data-locale="auto"></script>
       <% end %>

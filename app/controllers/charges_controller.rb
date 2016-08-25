@@ -20,9 +20,10 @@ class ChargesController < ApplicationController
     )
 
     u = User.find_by(id: session[:user_id])
-    u.account_balance += @amount.to_i
+    @new_amount = (@amount.to_i)/100
+    u.account_balance += @new_amount
     u.save
-
+    
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path

@@ -124,7 +124,7 @@ var $deadline = $('#deadline').html();
              },
       method: 'post'
     }).done(function(response) {
-      $('.heading').after('<p class="vote">' + response.user_name + ' voted ' + response.bet_side + '</p>' + '</p><button class="delete" style="text-decoration: underline">Delete</button><hr class="line">');
+      $('.heading').after('<p class="vote">' + response.user_name + ' voted ' + response.bet_side + '</p><button class="delete" style="text-decoration: underline">Delete</button><hr class="line">');
     });
   });
 
@@ -141,7 +141,7 @@ var $deadline = $('#deadline').html();
              },
       method: 'post'
     }).done(function(response) {
-      $('.bets').prepend('<p class="vote">' + response.user_name + ' voted ' + response.bet_side + '</p><button class="delete" style="text-decoration: underline">Delete</button><hr class="line">');
+      $('.heading').after('<p class="vote">' + response.user_name + ' voted ' + response.bet_side + '</p><button class="delete" style="text-decoration: underline">Delete</button><hr class="line">');
     });
   });
 
