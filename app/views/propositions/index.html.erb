@@ -55,8 +55,13 @@
   </div>
 </div>
 
-<div class="dashboard-panel">
+<div class="dashboard-panel" id="sticky-sidebar">
   <div class="stats">
     <h4>Dashboard</h4>
   </div>
 </div>
+
+<script>
+  var sidebar = document.getElementById('sticky-sidebar');
+  Stickyfill.add(sidebar);
+</script>
