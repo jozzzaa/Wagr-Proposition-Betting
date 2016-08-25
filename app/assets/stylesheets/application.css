@@ -173,6 +173,11 @@ nav {
   background: linear-gradient(to bottom right, #4f91dd, #2d629e);
 }
 
+#welcome-message {
+  background-color: transparent;
+  cursor: auto;
+}
+
 /*FOOTER STYLES*/
 
 footer {
@@ -347,8 +352,8 @@ select::-moz-focus-inner {
 .dashboard-panel {
   display: inline-block;
   width: 25%;
-  height: 400px;
   vertical-align: top;
+  height: 1px;
 }
 
 .dashboard-title {
@@ -357,4 +362,19 @@ select::-moz-focus-inner {
 
 .dt-top {
   margin-top: 10px;
+}
+
+#sticky-sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+}
+
+#script-hide {
+  display: none;
+}
+
+.btn-yes, img, .btn-yes:focus, img:focus {
+  outline: 0 !important;
+  border:0 none !important;
 }

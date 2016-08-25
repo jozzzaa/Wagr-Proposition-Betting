@@ -15,14 +15,18 @@
             <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
             <input type="hidden" name="proposition_id" value="<%=@prop.id%>">
             <input type="hidden" name="bet_side" value="yes">
-            <button class="btn-yes"><%= image_tag('icons/tick-icon.png', alt: 'Tick Icon') %></button>
+            <% if !user_voted? %>
+              <button class="btn-yes"><%= image_tag('icons/tick-icon.png', alt: 'Tick Icon') %></button>
+            <% end %>
           </form>
           <h5>$<span>10</span></h5>
           <form action="/bets" method="post">
             <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
             <input id="proposition_id" type="hidden" name="proposition_id" value="<%=@prop.id%>">
             <input type="hidden" name="bet_side" value="no">
-            <button class="btn-no"><%= image_tag('icons/cross-icon.png', alt: 'Tick Icon') %></button>
+            <% if !user_voted? %>
+              <button class="btn-no"><%= image_tag('icons/cross-icon.png', alt: 'Tick Icon') %></button>
+            <% end %>
           </form>
         </div>
       </div>
@@ -39,18 +43,14 @@
         <% @prop.bets.each do |bet| %>
           <p>
             <%= user = User.find_by(id:bet.user_id).user_name %> voted <%= bet.bet_side %>
-            <% if logged_in? %>
-              <% if admin? %>
-                <% if deadline_passed? %>
-                  <form action="/bets/<%= bet.id %>" method="post">
-                    <input type="hidden" name="_method" value="delete">
-                    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                    <input type="hidden" name="id" value="<%=bet.id%>">
-                    <input type="hidden" name="proposition_id" value="<%=@prop.id%>">
-                    <button>Delete Bet</button>
-                  </form>
-                <% end %>
-              <% end %>
+            <% if logged_in? && admin? && deadline_passed? %>
+              <form action="/bets/<%= bet.id %>" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                <input type="hidden" name="id" value="<%=bet.id%>">
+                <input type="hidden" name="proposition_id" value="<%=@prop.id%>">
+                <button>Delete</button>
+              </form>
             <% end %>
           </p>
           <hr>
@@ -104,6 +104,8 @@
   $('.btn-yes').on('click', function(event) {
     event.preventDefault();
     var $prop_id = $('#proposition_id').val();
+    $('.btn-yes').fadeOut(500);
+    $('.btn-no').fadeOut(500);
 
     $.ajax({
       url: '/api/bets',
@@ -112,14 +114,15 @@
              },
       method: 'post'
     }).done(function(response) {
-      console.log(response);
-      $('.bets').prepend('<p>' + response.user_name + ' voted ' + response.bet_side + '</p><hr>');
+      $('.bets').prepend('<p>' + response.user_name + ' voted ' + response.bet_side + '</p>' + ' <button style="text-decoration: underline">Delete</button>' + '<hr>');
     });
   });
 
   $('.btn-no').on('click', function(event) {
     event.preventDefault();
     var $prop_id = $('#proposition_id').val();
+    $('.btn-yes').fadeOut(500);
+    $('.btn-no').fadeOut(500);
 
     $.ajax({
       url: '/api/bets',
@@ -128,8 +131,7 @@
              },
       method: 'post'
     }).done(function(response) {
-      console.log(response);
-      $('.bets').prepend('<p>' + response.user_name + ' voted ' + response.bet_side + '</p><hr>');
+      $('.bets').prepend('<p>' + response.user_name + ' voted ' + response.bet_side + '</p>' + ' <button style="text-decoration: underline">Delete</button>' + '<hr>');
     });
   });
 

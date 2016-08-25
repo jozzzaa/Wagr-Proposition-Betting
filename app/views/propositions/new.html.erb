@@ -7,16 +7,16 @@
     <input name="user_id"type="hidden" value="<%= session[:user_id] %>">
 
     <label for="title">Title</label>
-    <input name="title" type="text">
+    <input name="title" type="text" placeholder="Enter your proposition, be clear, set a time frame.">
 
     <label for="description">Description</label>
-    <input name="description"type="text">
+    <input name="description" type="text" placeholder="Add any extra information about your proposition">
 
     <label for="deadline">Deadline</label>
-    <input name="deadline"type="datetime" placeholder="dd-mm-yyyy hh:mm">
+    <input name="deadline" type="datetime" placeholder="dd-mm-yyyy hh:mm">
 
     <label for="image">Image Url</label>
-    <input name="image"type="image" placeholder="dd-mm-yyyy hh:mm">
+    <input name="image" type="text" placeholder="Enter image URL to represent your proposition">
 
     <label for="categories">Pick a Category</label>
     <select name="categories" class="categories-drop">
