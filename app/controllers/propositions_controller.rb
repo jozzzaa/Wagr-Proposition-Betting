@@ -157,7 +157,7 @@ class PropositionsController < ApplicationController
     if params[:outcome] == "true"
       arr_of_trues.each do |bet|
         u = User.find(bet.user_id)
-        u.account_balance += 10
+        u.account_balance += 20
         u.save
       end
       arr_of_falses.each do |bet|
@@ -175,7 +175,7 @@ class PropositionsController < ApplicationController
       end
       arr_of_falses.each do |bet|
         u = User.find(bet.user_id)
-        u.account_balance += 10
+        u.account_balance += 20
         u.save
       end
     end

@@ -39,7 +39,7 @@
 	password: "pudding", account_balance: 400.00, account_type: "standard" )
 
 
-	p1 = Proposition.create(user_id: u1.id, title: "Can Maggie Out Joust Harry", description: "The weekend begins with the jousting match of a lifetime", image: "http://www.knightsofmiddleengland.com/_gallery-image.aspx?ID=1556", deadline: '10/07/2016/10/30/00', outcome: 'nil', category: "people" )
+	p1 = Proposition.create(user_id: u1.id, title: "Can Maggie Out Joust Harry", description: "The weekend begins with the jousting match of a lifetime", image: "http://www.knightsofmiddleengland.com/_gallery-image.aspx?ID=1556", deadline: '26/08/2016/17/30/00', outcome: 'nil', category: "people" )
 
 	p2 = Proposition.create(user_id: u2.id, title: "Can Hasslehoff Finish A Burger", description: "he has to eat the whole thing", image: "https://wehatesit.files.wordpress.com/2015/10/david-hasselhoff.jpg", deadline: '09/08/2016/15/20/00', outcome: 'nil', category: "celebrity" )
 

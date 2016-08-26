@@ -13,6 +13,11 @@ class BetsController < ApplicationController
     end
     @bet.amount = 10
     @bet.save
+
+    user = User.find(session[:user_id])
+    user.account_balance -=10
+    user.save
+
     redirect_to "/propositions/#{@prop.id}"
     # make sure display the error message (@bet.errors) on the proposition page if it doesn't save.
   end
@@ -21,6 +26,11 @@ class BetsController < ApplicationController
     @bet = Bet.find(params[:id])
     @prop = Proposition.find(params[:proposition_id])
     if @prop.deadline >= Time.now
+
+      user = User.find(session[:user_id])
+      user.account_balance +=10
+      user.save
+
       @bet.destroy
       redirect_to "/propositions/#{@prop.id}"
     else
