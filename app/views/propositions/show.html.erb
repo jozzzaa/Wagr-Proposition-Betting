@@ -12,18 +12,14 @@
             <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
             <input type="hidden" name="proposition_id" value="<%=@prop.id%>">
             <input type="hidden" name="bet_side" value="yes">
-            <% if !user_voted? %>
               <button class="btn-yes"><%= image_tag('icons/tick-icon.png', alt: 'Tick Icon') %></button>
-            <% end %>
           </form>
           <h5>$<span>10</span></h5>
           <form action="/bets" method="post">
             <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
             <input id="proposition_id" type="hidden" name="proposition_id" value="<%=@prop.id%>">
             <input type="hidden" name="bet_side" value="no">
-            <% if !user_voted? %>
               <button class="btn-no"><%= image_tag('icons/cross-icon.png', alt: 'Tick Icon') %></button>
-            <% end %>
           </form>
         </div>
       </div>
@@ -139,9 +135,13 @@ var $deadline = $('#deadline').html();
 <script>
   $('.btn-yes').on('click', function(event) {
     event.preventDefault();
+    if ($(this).hasClass('clicked')) {
+      return;
+    }
+    $(this).addClass('clicked');
     var $prop_id = $('#proposition_id').val();
-    $('.btn-yes').fadeOut(200);
-    $('.btn-no').fadeOut(200);
+    $('.btn-yes').fadeTo( "slow" , 0.8).off('click');
+    $('.btn-no').fadeTo( "slow" , 0.2).off('click');
 
     $.ajax({
       url: '/api/bets',
@@ -172,9 +172,15 @@ var $deadline = $('#deadline').html();
 
   $('.btn-no').on('click', function(event) {
     event.preventDefault();
+    if ($(this).hasClass('clicked')) {
+      return;
+    }
+    $(this).addClass('clicked');
     var $prop_id = $('#proposition_id').val();
-    $('.btn-yes').fadeOut(200);
-    $('.btn-no').fadeOut(200);
+    $('.btn-yes').fadeTo( "slow" , 0.2)
+    $('.btn-no').fadeTo( "slow" , 0.8)
+    $('.btn-yes').off();
+    $('.btn-no').off();
 
     $.ajax({
       url: '/api/bets',
