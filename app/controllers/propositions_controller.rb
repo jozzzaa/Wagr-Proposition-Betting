@@ -58,6 +58,12 @@ class PropositionsController < ApplicationController
     # to show the proposition's bets under the proposition, do a loop with @prop.bets
   end
 
+  def category_show
+    @props = Proposition.select { |prop| prop.category == params[:category] }
+    render "propositions/category.html.erb"
+  end
+
+
   def edit
     # to access the error messages, it will be @prop.errors
     @prop = Proposition.find(params[:id])
