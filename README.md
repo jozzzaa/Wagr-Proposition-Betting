@@ -3,17 +3,14 @@
 ## An app for creating and joining in on bets. 
 
 ##Technologies used
-This application was created with the framework Rails. We used Ruby, Javascript,Html, Css 
-and have implimented AJAX for certain parts of our website. 
+This application was created with the framework Rails. We used Ruby, Javascript,Html, Css and have implimented AJAX for certain parts of our website. We managed team contributions using a standard git flow through github.  
 
 ## Approach we took 
 
-With the application wagr we wanted to create a fun platform where a potential user can view bets made by 
-other memebers of wager. A potential user can view these bets but won't be able to join or create a propisition until signing up. 
-Once joined a user is encouraged to propose an outcome based on pop culture references , celebrities 
-and sport amongst other categories.As manyusers can bet on a proposition and once another user has joined their bet with the oposing outcome will the bet be judged at the deadline.
+With the application wagr we wanted to create a fun platform where a potential user can view bets made by other memebers of wager. A potential user can view these bets but won't be able to join or create a proposition until signing up. 
+Once joined a user is encouraged to propose an outcome based on pop culture references , celebrities and sport amongst other categories.As many users can bet on a proposition and once another user has joined their bet with the oposing outcome this bet will then be judged at the deadline.
 
-This app Impliments the API Stripe, a RESTFUL API that allows a user of the website to access a payment platform from the 
+This app impliments the API Stripe, a RESTFUL API that allows a user of the website to access a payment platform from the 
 front end.Using Stripe a person can credit their account and once they have enough money on the website they can join a bet. 
 
 ##User stories
