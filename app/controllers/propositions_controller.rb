@@ -105,7 +105,7 @@ class PropositionsController < ApplicationController
   end
 
   def decide_referee
-    arr_to_decide = Proposition.select { |prop| prop.outcome == "nil" && prop.deadline < Time.now }
+    arr_to_decide = Proposition.select { |prop| prop.outcome == "nil" && prop.deadline < DateTime.now }
     if arr_to_decide.length >= 1
       @prop = arr_to_decide.sort_by { |k| k["updated_at"] }.first
       redirect_to "/propositions/#{@prop.id}"

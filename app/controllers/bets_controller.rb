@@ -25,7 +25,7 @@ class BetsController < ApplicationController
   def destroy
     @bet = Bet.find(params[:id])
     @prop = Proposition.find(params[:proposition_id])
-    if @prop.deadline >= Time.now
+    if @prop.deadline >= DateTime.now
 
       user = User.find(session[:user_id])
       user.account_balance +=10
