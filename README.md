@@ -28,7 +28,7 @@ The main focus of this website is split into three pages there is the landing pa
 by various users. After you click on a bet your taken to the single bet view. This displays the page that a single user has, this shows the single bet gives an explination of the bet. There is also the page that impliments stripe here a user can make a payment that will be created to their account. 
 
 ##Viewing the website
-This website is currently hosted on heroku at .. 
+This website is currently hosted on heroku at.. 
 [link to wire frames](https://postimg.org/gallery/1bs9i5v40/)
 
 
