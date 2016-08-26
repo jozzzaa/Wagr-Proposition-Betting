@@ -13,7 +13,7 @@ module UsersHelper
   end
 
   def deadline_passed?
-    if @prop.deadline > Time.now
+    if @prop.deadline > DateTime.now
       return true
     else
       return false
