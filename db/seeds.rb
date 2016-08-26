@@ -39,9 +39,10 @@
 	password: "pudding", account_balance: 400.00, account_type: "standard" )
 
 
+
 	p1 = Proposition.create(user_id: u1.id, title: "Can Maggie Out Joust Harry", description: "The weekend begins with the jousting match of a lifetime", image: "http://www.knightsofmiddleengland.com/_gallery-image.aspx?ID=1556", deadline: '27/08/2016/10:30:00', outcome: 'nil', category: "people" )
 
-	p2 = Proposition.create(user_id: u2.id, title: "Can Hasslehoff Finish A Burger", description: "he has to eat the whole thing", image: "https://wehatesit.files.wordpress.com/2015/10/david-hasselhoff.jpg", deadline: '27/8/2016/17/00', outcome: 'nil', category: "celebrity" )
+	p2 = Proposition.create(user_id: u2.id, title: "Can Hasslehoff Finish A Burger", description: "he has to eat the whole thing", image: "https://wehatesit.files.wordpress.com/2015/10/david-hasselhoff.jpg", deadline: '27/8/2016/17:00:00', outcome: 'nil', category: "celebrity" )
 
 	p3 = Proposition.create(user_id: u3.id, title: "The queen of dragons will have her brother killed next episode", description: "In the last episode of Game of Thrones, Daenerys Targaryen's brother threathen her life. Do you think she will rise up and kill him or do you think she will let it go?", image: "http://digitalspyuk.cdnds.net/16/25/980x490/landscape-1466508335-20160602-ep609-publicity-still-00400095499.jpg", deadline: '26/08/2016/17:30:00', outcome: 'nil', category: "tv_shows")
 

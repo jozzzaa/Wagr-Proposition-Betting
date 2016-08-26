@@ -13,6 +13,11 @@ module Api
         @bet.bet_side = false
       end
       @bet.amount = 10
+
+      user = User.find(session[:user_id])
+      user.account_balance -=10
+      user.save
+
       @bet.save
 
       user_name = @bet.user.user_name
@@ -25,6 +30,11 @@ module Api
     def destroy
       @bet = Bet.find(params[:bet_id])
       @bet.destroy
+
+      user = User.find(session[:user_id])
+      user.account_balance +=10
+      user.save
+
       bet_id = @bet.id
       render json: { bet_id: bet_id }
     end
