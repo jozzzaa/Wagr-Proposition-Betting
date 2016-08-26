@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   post '/api/bets', to: 'api/bets#create'
 
+  delete '/api/bets', to: 'api/bets#destroy'
+
   # NEW CODE
 
 end
