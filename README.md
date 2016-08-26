@@ -29,7 +29,7 @@ by various users. After you click on a bet your taken to the single bet view. Th
 
 ##Viewing the website
 This website is currently hosted on heroku at 
-[https://postimg.org/gallery/1bs9i5v40/]
+[link to wire frames](https://postimg.org/gallery/1bs9i5v40/)
 
 
 ## Issues and difficulties 
