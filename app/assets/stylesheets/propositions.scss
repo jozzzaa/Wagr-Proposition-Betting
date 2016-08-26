@@ -341,9 +341,6 @@ hr {
   width: 46%;
   height: 90px;
   margin: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: 'Roboto', sans-serif;
   font-size: 1.2em;
   background-color: black;
@@ -351,7 +348,17 @@ hr {
   background-repeat: no-repeat;
   background-position: center;
   transition: 0.5s;
+  padding: 0;
+}
 
+.categories-btn form {
+  height: 100%;
+  width: 100%;
+}
+
+.categories-btn button {
+  height: 100%;
+  width: 100%;
 }
 
 

@@ -39,7 +39,7 @@ body {
   padding: 0 2.5% 0 2.5%;
   position: relative;
   min-height: 100%;
-  padding-bottom: 130px;
+  padding-bottom: 50px;
 
 }
 
@@ -185,10 +185,7 @@ footer {
   width: 100%;
   border-top: 1px solid #636363;
   padding: 10px;
-  margin: 50px 0px 0px 0px;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
+  margin: 50px auto 0px auto;
 }
 
 

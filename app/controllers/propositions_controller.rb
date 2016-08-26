@@ -50,8 +50,10 @@ class PropositionsController < ApplicationController
     # you want to show error messages flash[:title] and flash[:notice] if they exist (see edit and destroy methods below)
     user_search = User.find_by(id: session[:user_id])
     @prop = Proposition.find(params[:id])
-    @current_wagers = user_search.bets.count
-    @current_propositions = user_search.propositions.count
+    if logged_in?
+      @current_wagers = user_search.bets.count
+      @current_propositions = user_search.propositions.count
+    end
     @profit_30 = "70"
     @profit_all = "340"
     render :show
@@ -60,6 +62,28 @@ class PropositionsController < ApplicationController
 
   def category_show
     @props = Proposition.select { |prop| prop.category == params[:category] }
+
+    @category = params[:category]
+
+    case @category
+      when "tv_shows"
+        @category_title = 'TV Shows'
+      when "movies"
+        @category_title = 'Movies'
+      when "sport"
+        @category_title = 'Sports'
+      when "celebrity"
+        @category_title = 'Celebrity'
+      when "people"
+        @category_title = 'People'
+      when "politics"
+        @category_title = 'Politics'
+      when "games"
+        @category_title = 'Games'
+      when "other"
+        @category_title = 'Other'
+    end
+
     render "propositions/category.html.erb"
   end
 
