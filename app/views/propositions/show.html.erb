@@ -138,10 +138,14 @@ var $deadline = $('#deadline').html();
     if ($(this).hasClass('clicked')) {
       return;
     }
+    if ($('btn-no').hasClass('clicked')) {
+      return;
+    }
     $(this).addClass('clicked');
+    $('btn-no').addClass('clicked');
     var $prop_id = $('#proposition_id').val();
-    $('.btn-yes').fadeTo( "slow" , 0.8).off('click');
-    $('.btn-no').fadeTo( "slow" , 0.2).off('click');
+    $('.btn-yes').fadeTo( "slow" , 0.8)
+    $('.btn-no').fadeTo( "slow" , 0.2)
 
     $.ajax({
       url: '/api/bets',
@@ -175,12 +179,14 @@ var $deadline = $('#deadline').html();
     if ($(this).hasClass('clicked')) {
       return;
     }
+    if ($('btn-yes').hasClass('clicked')) {
+      return;
+    }
     $(this).addClass('clicked');
+    $('btn-yes').addClass('clicked');
     var $prop_id = $('#proposition_id').val();
     $('.btn-yes').fadeTo( "slow" , 0.2)
     $('.btn-no').fadeTo( "slow" , 0.8)
-    $('.btn-yes').off();
-    $('.btn-no').off();
 
     $.ajax({
       url: '/api/bets',
