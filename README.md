@@ -23,7 +23,7 @@ When first signing up a user is given a general account. Genral access allows th
 through stripe.The next acount is a referee,they can do the same as a general account but also judge a bet once it has passed the deadline. 
 An admin account has extra ability to edit and delete bets.
 
-##Discription 
+##Description 
 The main focus of this website is split into three pages there is the landing page that has all the different bets created
 by various users. After you click on a bet your taken to the single bet view. This displays the page that a single user has, this shows the single bet gives an explination of the bet. There is also the page that impliments stripe here a user can make a payment that will be created to their account. 
 
