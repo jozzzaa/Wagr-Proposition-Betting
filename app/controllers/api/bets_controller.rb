@@ -17,23 +17,16 @@ module Api
 
       user_name = @bet.user.user_name
       bet_side = @bet.bet_side
+      bet_id = @bet.id
 
-      render json: { user_name: user_name, bet_side: bet_side }
+      render json: { user_name: user_name, bet_side: bet_side, bet_id: bet_id }
     end
 
     def destroy
-      @bet = Bet.find(params[:id])
-      @prop = Proposition.find(params[:proposition_id])
-      if @prop.deadline >= Time.now
-        @bet.destroy
-        bet_id = @bet.id
-        prop_id = @prop.id
-        render json: { bet_id: bet_id, prop_id: prop_id }
-      else
-        flash[:title]='Error!'
-        flash[:notice]='You can no longer delete your bet as the deadline has passed.'
-        redirect_to "/propositions/#{@prop.id}"
-      end
+      @bet = Bet.find(params[:bet_id])
+      @bet.destroy
+      bet_id = @bet.id
+      render json: { bet_id: bet_id }
     end
 
   end
