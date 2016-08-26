@@ -150,7 +150,23 @@ var $deadline = $('#deadline').html();
              },
       method: 'post'
     }).done(function(response) {
-      $('.heading').after('<p class="vote">' + response.user_name + ' voted ' + response.bet_side + '</p><button class="delete" style="text-decoration: underline">Delete</button><hr class="line">');
+      $('.heading').after('<p class="vote" id="' + response.bet_id + '">' + response.user_name + ' voted ' + response.bet_side + '</p><button class="delete" style="text-decoration: underline">Delete</button><hr class="line">');
+
+      $('.delete').on('click', function(event) {
+        var $bet_id = $('.vote').attr("id")
+
+        $.ajax({
+          url: '/api/bets',
+          data: { bet_id: $bet_id },
+          method: 'delete'
+        }).done(function(response) {
+          $('.vote').hide();
+          $('.line').hide();
+          $('.delete').hide();
+          $('.btn-yes').show();
+          $('.btn-no').show();
+        });
+      });
     });
   });
 
@@ -167,24 +183,26 @@ var $deadline = $('#deadline').html();
              },
       method: 'post'
     }).done(function(response) {
-      $('.heading').after('<p class="vote">' + response.user_name + ' voted ' + response.bet_side + '</p><button class="delete" style="text-decoration: underline">Delete</button><hr class="line">');
+      $('.heading').after('<p class="vote" id="' + response.bet_id + '">' + response.user_name + ' voted ' + response.bet_side + '</p><button class="delete" style="text-decoration: underline">Delete</button><hr class="line">');
+
+      $('.delete').on('click', function(event) {
+        var $bet_id = $('.vote').attr("id")
+
+        $.ajax({
+          url: '/api/bets',
+          data: { bet_id: $bet_id },
+          method: 'delete'
+        }).done(function(response) {
+          $('.vote').hide();
+          $('.line').hide();
+          $('.delete').hide();
+          $('.btn-yes').show();
+          $('.btn-no').show();
+        });
+      });
     });
   });
 
-  $('.delete').on('click', function(event) {
-    console.log('hello')
-    $.ajax({
-      url: '/api/bets',
-      data: { bet_id: $bet_id,
-              proposition_id: $prop_id
-             },
-      method: 'delete'
-    }).done(function(response) {
-      $('.vote').remove();
-      $('.line').remove();
-      $('.delete').remove();
-    });
-  });
 
 </script>
 
