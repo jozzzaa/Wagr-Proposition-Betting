@@ -486,3 +486,7 @@ select::-moz-focus-inner {
   left: 0px;
   width: 100%;
 }
+
+#message-text {
+  line-height: 1em;
+}
