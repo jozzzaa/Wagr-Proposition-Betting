@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   delete '/api/bets', to: 'api/bets#destroy'
 
+  get 'categories', to: 'propositions#category_show'
+
   # NEW CODE
 
 end
