@@ -34,10 +34,21 @@ This website is currently hosted on heroku at
 ## Issues and difficulties 
 We originally looked into using a gem called paperclip and there have been issues with the file attachement library when trying to impiment this gem and didn't find the time to come back to figuring it out. 
 Understanding and using Ajax was a difficult implimentation and still feels a little unclear. We managed to use it in the way we intended for users when they join a bet. The join bet occures without the page refresh. Deleting a bet that 
-someone has joined using ajax has been difficult to get workimg.
+someone has joined using ajax has been difficult to get working put we also managed to fix this issue.
+
+##Installation Instructions (for local edit and play):
+
+- Clone my master folder for Wagr (when you click the 'clone or download' link, copy the link).
+- In your terminal, go to the directory where you want to clone this game to.
+- Type git clone "link" e.g. https://github.com/taddavisweb/wagr
+- After it has cloned, go into the folders and edit as desired.
+- To play, install a virtual server like postgres and run it, and type ruby "rails s" in your console in the wagr folder. Identify the port it is using and go to your browser and enter the localhost and the port e.g. http://localhost:3000/
+
 
 Thanks for reading. 
 This app was created by Andrew Pratley, Jordan Etzler and Tad Davis
+
+
 
 ###Bonus
 
