@@ -53,6 +53,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  transition: 0.5s;
+}
+
+.prop:hover {
+  opacity: 0.7;
 }
 
 .prop > a {
@@ -324,4 +329,92 @@ hr {
   display: inline-block;
   width: 25%;
   vertical-align: top;
+}
+
+.categories-holder {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.categories-btn {
+  width: 46%;
+  height: 90px;
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  background-color: black;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.5s;
+
+}
+
+
+#tv-cat {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),  url("http://static4.techinsider.io/image/572a40099105844d018c0b5b-1220-610/game-of-thrones-daenerys.jpg");
+}
+
+#movie-cat {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),  url("http://www.phoenix.org.uk/content/uploads/2014/04/Silver-screenings-1.jpg");
+}
+
+#sport-cat {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("http://www.sportspsychologybasketball.com/wp-content/uploads/2011/02/duke_600x300.jpg");
+}
+
+#celebrity-cat {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("http://masetv.com/wp-content/uploads/2014/02/justin-bieber-court.jpg");
+}
+
+#people-cat {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("http://static4.techinsider.io/image/572a40099105844d018c0b5b-1220-610/game-of-thrones-daenerys.jpg");
+}
+
+#politics-cat {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("http://www.huish.ac.uk/image/550x-tc550x400/4642915654_4fbb595e20_b.jpg");
+}
+
+#games-cat {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("http://www.goat-simulator.com/ffa11.jpg");
+}
+
+#other-cat {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("https://twistedsifter.files.wordpress.com/2012/03/hover-dog-flying-dog-3.jpg?w=640&h=463");
+}
+
+#tv-cat:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),  url("http://static4.techinsider.io/image/572a40099105844d018c0b5b-1220-610/game-of-thrones-daenerys.jpg");
+}
+
+#movie-cat:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),  url("http://www.phoenix.org.uk/content/uploads/2014/04/Silver-screenings-1.jpg");
+}
+
+#sport-cat:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("http://www.sportspsychologybasketball.com/wp-content/uploads/2011/02/duke_600x300.jpg");
+}
+
+#celebrity-cat:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("http://masetv.com/wp-content/uploads/2014/02/justin-bieber-court.jpg");
+}
+
+#people-cat:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("http://static4.techinsider.io/image/572a40099105844d018c0b5b-1220-610/game-of-thrones-daenerys.jpg");
+}
+
+#politics-cat:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("http://www.huish.ac.uk/image/550x-tc550x400/4642915654_4fbb595e20_b.jpg");
+}
+
+#games-cat:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("http://www.goat-simulator.com/ffa11.jpg");
+}
+
+#other-cat:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("https://twistedsifter.files.wordpress.com/2012/03/hover-dog-flying-dog-3.jpg?w=640&h=463");
 }
