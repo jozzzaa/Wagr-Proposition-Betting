@@ -1,22 +1,10 @@
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span style="color: white">Credit $50 your Wagr Account</span>
-    </label>
 
-  </article>
-  <input type="hidden" name="custom_amount" value="5000">
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Credit Wagr Account"
-          data-amount="5000"
-          data-locale="auto"></script>
-  <% end %>
+
+<div class="form-block charges-block">
+
+  <h2 id="message-text">Funding Options</h2>
+
+  <p>Credit $50 to your Wagr account</p>
 
   <%= form_tag charges_path do %>
     <article>
@@ -25,9 +13,25 @@
           <p><%= flash[:error] %></p>
         </div>
       <% end %>
-      <label class="amount">
-        <span style="color: white">Credit $100 your Wagr Account</span>
-      </label>
+
+    </article>
+    <input type="hidden" name="custom_amount" value="5000">
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="Credit Wagr Account"
+            data-amount="5000"
+            data-locale="auto"></script>
+  <% end %>
+
+  <p>Credit $100 to your Wagr account</p>
+
+  <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
 
     </article>
     <input type="hidden" name="custom_amount" value="10000">
@@ -38,6 +42,8 @@
             data-locale="auto"></script>
     <% end %>
 
+    <p>Credit $150 to your Wagr account</p>
+
     <%= form_tag charges_path do %>
       <article>
         <% if flash[:error].present? %>
@@ -45,9 +51,6 @@
             <p><%= flash[:error] %></p>
           </div>
         <% end %>
-        <label class="amount">
-          <span style="color: white">Credit $150 your Wagr Account</span>
-        </label>
 
       </article>
       <input type="hidden" name="custom_amount" value="15000">
@@ -56,4 +59,10 @@
               data-description="Credit Wagr Account"
               data-amount="15000"
               data-locale="auto"></script>
-      <% end %>
+    <% end %>
+
+
+  <a href="/dashboard" style="color: white">Back to Dashboard</a>
+
+
+</div>

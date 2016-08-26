@@ -37,7 +37,7 @@
 
       <div class="bets">
       <h5 class="heading">Wagers</h5>
-        <% @prop.bets.each do |bet| %>
+        <% @prop.bets.first(10).each do |bet| %>
           <p>
             <%= user = User.find_by(id:bet.user_id).user_name %> voted <%= bet.bet_side %>
             <% if logged_in? && deadline_passed? && (admin? || bet.user_id == session[:user_id]) %>

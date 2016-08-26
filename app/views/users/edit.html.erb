@@ -1,15 +1,31 @@
-<h1>Edit User</h1>
+<div class="form-block">
 
-<a href="/index">Users</a>
-<%= @user.errors.full_messages.join %>
-<form action="/users/<%= @user.id%>" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input type="hidden" name="_method" value="put">
-  <label for="">Email</label>
-  <input type="text" name="email" value="<%=@user.email%>">
+  <h2>Edit Account</h2>
 
-  <label for="">Password</label>
-  <input type="text" name="password" value="<%=@user.password%>">
+  <form action="/users/<%= @user.id%>" method="post">
 
-  <button>Update</button>
-</form>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="hidden" name="_method" value="put">
+
+    <input name="user_id"type="hidden" value="<%= session[:user_id] %>">
+
+    <label for="first_name">First Name</label>
+    <input name="first_name" type="text" value="<%=@user.first_name%>">
+
+    <label for="last_name">Last Name</label>
+    <input name="last_name" type="text" value="<%=@user.last_name%>">
+
+    <label for="user_name">Username</label>
+    <input name="user_name" type="text" value="<%=@user.user_name%>">
+
+    <label for="email">Email</label>
+    <input name="email" type="text" value="<%=@user.email%>">
+
+    <label for="password">Password</label>
+    <input name="password" type="password">
+
+    <button class="form-btn blue-btn">Update</button>
+
+  </form>
+
+</div>

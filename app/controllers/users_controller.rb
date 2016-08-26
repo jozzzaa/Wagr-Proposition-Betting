@@ -36,7 +36,8 @@ class UsersController < ApplicationController
 
   def edit
     # to access the error messages, it will be @user.error
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
+    @user = User.find_by(id: session[:user_id])
     render :edit
   end
 
